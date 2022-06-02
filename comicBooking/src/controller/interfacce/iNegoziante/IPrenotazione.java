@@ -1,4 +1,4 @@
-package controller.interfacce;
+package controller.interfacce.iNegoziante;
 
 import java.util.List;
 

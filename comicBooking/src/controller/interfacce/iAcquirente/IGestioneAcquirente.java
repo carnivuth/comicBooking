@@ -1,4 +1,4 @@
-package controller.interfacce;
+package controller.interfacce.iAcquirente;
 
 public interface IGestioneAcquirente {
 

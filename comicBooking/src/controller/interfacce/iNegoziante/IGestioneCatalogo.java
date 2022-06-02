@@ -1,4 +1,4 @@
-package controller.interfacce;
+package controller.interfacce.iNegoziante;
 
 import model.fumetto.Fumetto;
 import model.user.Negoziante;

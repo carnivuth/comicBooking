@@ -1,4 +1,4 @@
-package controller.interfacce;
+package controller.interfacce.ilogin;
 
 public interface ILogin {
 
