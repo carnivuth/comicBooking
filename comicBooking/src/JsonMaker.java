@@ -1,6 +1,11 @@
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.gson.Gson;
 
 import model.biblioteca.Biblioteca;
 import model.fumetteria.Catalogo;
@@ -9,6 +14,7 @@ import model.fumetto.Fumetto;
 import model.fumetto.Serie;
 import model.user.Acquirente;
 import model.user.Negoziante;
+
 
 public class JsonMaker {
     public static void main(String args[]){
@@ -89,7 +95,24 @@ public class JsonMaker {
         fumettiN.add(f);
 
         c1.setFumetti(fumettiN);
-        
+        Gson g=new Gson();
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(new File("dbcomixacquirente.json")))) {
+
+            writer.write(g.toJson(u1));
+        } catch (IOException e) {
+  
+            e.printStackTrace();
+        }
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(new File("dbcomixnegoziante.json")))) {
+
+            writer.write(g.toJson(n1));
+        } catch (IOException e) {
+           
+            e.printStackTrace();
+        }
+  
+         
 
 
     }

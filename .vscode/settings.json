@@ -1,0 +1,10 @@
+{
+    "java.project.sourcePaths": [
+        "comicBooking\\lib",
+        "comicBooking\\src"
+    ],
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "comicBooking/lib/gson-2.2.2.jar"
+    ]
+}
