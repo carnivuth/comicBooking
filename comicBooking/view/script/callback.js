@@ -20,10 +20,12 @@ function request_callback( theXhr, callback ) {
 	        	// operazione avvenuta con successo
 	
 		        if ( theXhr.responseText && theXhr.responseText !== "" ) {
+					
+					oggetto = JSON.parse(theXhr.responseText);
+					operazione = oggetto.operazione;
 
 					if (operazione === "notifiche"){
-				    	printNotifiche(callback, theXhr.responseText);
-						operazione = "";
+				    	printNotifiche(oggetto.result, theXhr.responseText);
 					}
 					//callback.innerHTML=JSON.parse(theXhr.responseText);
                 }
@@ -105,5 +107,4 @@ function request(uri,callback) {
 
 
 
-uriServer = "http://localhost:8080/"
-operazione = "";
+uriServer = "http://localhost:8080/fumetto";

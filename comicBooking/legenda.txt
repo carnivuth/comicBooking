@@ -1,0 +1,6 @@
+# parametri classe wrapper gson
+operazione
+result
+
+# Acquirente
+?operazione=notifiche
