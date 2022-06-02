@@ -20,19 +20,6 @@ function printNotifiche(callback, stringaJson){
         innerHTML += '<br>'
         
      }
-
-    callback.innerHTML
-	//nel div matrix stampo le text area
-    var div=myGetElementById('matrix');
-    //var str='<input type="text" id="'+i+j+'" value="1" onchange="calcola()">';
-    div.innerHTML="";
-
-    for(var i=0; i<x; i++){
-        for(var j=0; j<y; j++){
-            div.innerHTML+=('<input type="text" id="'+i+j+'" value="1" onchange="calcola()">');
-        }
-        div.innerHTML+='<br>';
-    }
 }
 
 function segnaComeLetto(){
