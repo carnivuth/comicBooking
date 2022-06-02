@@ -20,7 +20,11 @@ function request_callback( theXhr, callback ) {
 	        	// operazione avvenuta con successo
 	
 		        if ( theXhr.responseText && theXhr.responseText !== "" ) {
-				    printNotifiche(callback, theXhr.responseText);
+
+					if (operazione === "notifiche"){
+				    	printNotifiche(callback, theXhr.responseText);
+						operazione = "";
+					}
 					//callback.innerHTML=JSON.parse(theXhr.responseText);
                 }
 	
@@ -98,3 +102,8 @@ function request(uri,callback) {
 		requestIframe(uri,callback); 
 
 }// caricaFeed()
+
+
+
+uriServer = "http://localhost:8080/"
+operazione = "";
