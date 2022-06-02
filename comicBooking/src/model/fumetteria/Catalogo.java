@@ -40,6 +40,7 @@ public class Catalogo{
         for (Fumetto f : fumetti){
             NumeroCopie copia = new NumeroCopie();
             copia.setFumetto(f);
+            copia.setDisponibilita(1);
             
             if (this.fumetti.add(copia) == false){
                 ok = false;
