@@ -1,4 +1,4 @@
-function printNotifiche(callback, stringaJson){
+function printCatalogo(callback, stringaJson){
     
     lista = JSON.parse(theXhr.responseText);
     callback.innerHTML = "Fumetto\tFumetteria\tSegnaComeLetto";
@@ -23,10 +23,5 @@ function printNotifiche(callback, stringaJson){
 }
 
 function segnaComeLetto(){
-
-}
-
-function richiediNotifiche(){
-    operazione = "notifiche"
-    request(uriServer + "getNotifiche", myGetElementById("notifiche"));
+    
 }
