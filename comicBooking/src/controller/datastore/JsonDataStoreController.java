@@ -4,10 +4,14 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.google.gson.Gson;
 
 import controller.interfacce.iPercistance.IDataStore;
+import model.fumetteria.Fumetteria;
+import model.fumetto.Fumetto;
 import model.user.Acquirente;
 import model.user.Negoziante;
 
@@ -15,6 +19,7 @@ public class JsonDataStoreController implements IDataStore {
 
     private Acquirente a;
     private Negoziante n;
+    private List<Fumetteria> f;
 
     public JsonDataStoreController(){
         init();
@@ -25,8 +30,17 @@ public class JsonDataStoreController implements IDataStore {
         return a;
     }
 
-    
-    
+    @Override
+    public List<Negoziante> getNegozianti(){
+        List<Negoziante> list = new ArrayList<>();
+        return list;
+    }
+
+    @Override
+    public List<Fumetto> getFumetti(){
+        List<Fumetto> fumetti = new ArrayList<>();
+        return fumetti;
+    }
 
     @Override
     public Negoziante getNegoziante(String username) {

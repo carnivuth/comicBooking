@@ -54,7 +54,10 @@ public class GestioneAcquirenteController extends HttpServlet implements IGestio
                         }
                        
                         break;
-                    
+                    case "fumettiPerPrenotazione":
+                        
+                        break;
+
                     case "interessi":
                         break;  
                     
