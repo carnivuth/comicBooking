@@ -7,4 +7,9 @@ result
 ?operazione=notifiche
 ?operazione=interessi
 
+# Acquirente Prenotazione
+?operazione=fumettiPerPrenotazione
+
+
+---------
 Il login deve creare un cookie in cui c'è l'username

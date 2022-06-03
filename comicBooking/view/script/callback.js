@@ -27,6 +27,9 @@ function request_callback( theXhr, callback ) {
 					if (operazione === "notifiche"){
 				    	printNotifiche(oggetto.result, theXhr.responseText);
 					}
+					if (operazione === "biblioteca"){
+				    	printBiblioteca(oggetto.result, theXhr.responseText);
+					}
 					//callback.innerHTML=JSON.parse(theXhr.responseText);
                 }
 	
@@ -106,6 +109,3 @@ function request(uri,callback) {
 }// caricaFeed()
 
 
-
-uriServer = "http://localhost:8080/fumetto";
-tab = "\t"
