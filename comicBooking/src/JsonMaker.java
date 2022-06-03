@@ -96,7 +96,7 @@ public class JsonMaker {
 
         c1.setFumetti(fumettiN);
         Gson g=new Gson();
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(new File("../resources/dbcomixacquirente.json")))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(new File("./dbcomixacquirente.json")))) {
 
             writer.write(g.toJson(u1));
         } catch (IOException e) {
@@ -104,7 +104,7 @@ public class JsonMaker {
             e.printStackTrace();
         }
 
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(new File("../resources/dbcomixnegoziante.json")))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(new File("./dbcomixnegoziante.json")))) {
 
             writer.write(g.toJson(n1));
         } catch (IOException e) {
