@@ -9,6 +9,7 @@ result
 
 # Acquirente Prenotazione
 ?operazione=fumettiPerPrenotazione
+"?operazione=fumetteriePerPrenotazione&fumetto="+jsonFumetto
 
 
 ---------
