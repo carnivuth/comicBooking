@@ -3,4 +3,6 @@ operazione
 result
 
 # Acquirente
+?operazione=biblioteca
 ?operazione=notifiche
+?operazione=interessi

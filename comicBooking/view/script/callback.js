@@ -108,3 +108,4 @@ function request(uri,callback) {
 
 
 uriServer = "http://localhost:8080/fumetto";
+tab = "\t"

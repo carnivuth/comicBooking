@@ -1,8 +1,7 @@
 function printBiblioteca(callback, result){
-    
-    result = result.fumetti;
 
-    callback.innerHTML = "Titolo" + tab + "Numero" + tab + "Serie" + tab + "Descrizione" + tab + "Casa Editrice<br>";
+    result = result.interessi;
+    callback.innerHTML = "Tipologia" + tab + "Nome" + "<br>";
 
 
     for (var i=0; i<result.length; i++) {
@@ -15,6 +14,6 @@ function printBiblioteca(callback, result){
      }
 }
 
-function richiediBiblioteca(){
-    request(uriServer + "?operazione=biblioteca", myGetElementById("biblioteca"));
+function richiediInteressi(){
+    request(uriServer + "?operazione=interessi", myGetElementById("interessi"));
 }
