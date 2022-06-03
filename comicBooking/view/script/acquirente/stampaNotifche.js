@@ -3,14 +3,14 @@ function printNotifiche(callback, result){
     callback.innerHTML = "Fumetto"+ tab + "Fumetteria" + tab + "SegnaComeLetto<br>";
 
     for (var i=0; i<result.length; i++) {
-        f = lista[i].fumetto;
-        fumetteria = lista[i].fumetteria;
+        f = result[i].fumetto;
+        fumetteria = result[i].fumetteria;
         checkbox = "<input type=\"checkbox\" id=\"segnaComeLetto\" name=\"segnaComeLetto\" onclick=\"segnaComeLetto(this)\">";
         checkboxSi = "<input type=\"checkbox\" id=\"segnaComeLetto\" name=\"segnaComeLetto\" checked >";
         
         callback.innerHTML += (f.titolo + " " + f.numero + tab + fumetteria.nome + tab);
         
-        if (lista[i].visualizzato){
+        if (result[i].visualizzato){
             callback.innerHTML += checkboxSi;
         }
         else{

@@ -6,11 +6,20 @@ function printBiblioteca(callback, result){
 
     for (var i=0; i<result.length; i++) {
         f = lista[i];
+        classe = f.constructor.name;
 
-        callback.innerHTML += (f.titolo + tab + f.numero + tab + f.serie.titolo + tab + f.descrizione + tab + f.casaEditrice);
-        
+        callback.innerHTML += classe;
+        if (classe==="Serie"){
+            callback.innerHTML += f.tipo;
+        }
+        if (classe==="Fumetteria"){
+            callback.innerHTML += f.nome;
+        }
+        if (classe==="Serie"){
+            callback.innerHTML += f.titolo;
+        }
+ 
         callback.innerHTML += '<br>'
-        
      }
 }
 

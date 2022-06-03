@@ -6,8 +6,8 @@ function printBiblioteca(callback, result){
 
 
     for (var i=0; i<result.length; i++) {
-        f = lista[i];
-
+        f = result[i];
+        
         callback.innerHTML += (f.titolo + tab + f.numero + tab + f.serie.titolo + tab + f.descrizione + tab + f.casaEditrice);
         
         callback.innerHTML += '<br>'

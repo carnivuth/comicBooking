@@ -6,3 +6,5 @@ result
 ?operazione=biblioteca
 ?operazione=notifiche
 ?operazione=interessi
+
+Il login deve creare un cookie in cui c'è l'username
