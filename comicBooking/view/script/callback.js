@@ -30,6 +30,19 @@ function request_callback( theXhr, callback ) {
 					if (operazione === "biblioteca"){
 				    	printBiblioteca(oggetto.result, theXhr.responseText);
 					}
+					if (operazione === "interessi"){
+				    	printInteressi(oggetto.result, theXhr.responseText);
+					}
+					// prenotazione
+					if (operazione === "fumettiPerPrenotazione"){
+				    	stampaFumettiPerPrenotazione(oggetto.result, theXhr.responseText);
+					}
+					if (operazione === "fumetteriePerPrenotazione"){
+				    	stampaFumetteriePerPrenotazione(oggetto.result, theXhr.responseText);
+					}
+					if (operazione === "richiediPrenotazione"){
+				    	risultatoPrenotazione(oggetto.result, theXhr.responseText);
+					}
 					//callback.innerHTML=JSON.parse(theXhr.responseText);
                 }
 	

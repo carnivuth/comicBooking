@@ -10,6 +10,8 @@ result
 # Acquirente Prenotazione
 ?operazione=fumettiPerPrenotazione
 "?operazione=fumetteriePerPrenotazione&fumetto="+jsonFumetto
+"?operazione=richiediPrenotazione&fumetto=" + jsonFumetto + "&fumetteria" + jsonFumetteria
+// l'ultima operazione mi ritorna un Boolean in result in modo che io possa sapere se l'operazione è andata a buon fine
 
 
 ---------

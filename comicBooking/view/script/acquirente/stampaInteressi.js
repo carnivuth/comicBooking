@@ -1,4 +1,4 @@
-function printBiblioteca(callback, result){
+function printInteressi(callback, result){
 
     result = result.interessi;
     callback.innerHTML = "Tipologia" + tab + "Nome" + "<br>";
