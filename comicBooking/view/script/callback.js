@@ -23,7 +23,8 @@ function request_callback( theXhr, callback ) {
 					
 					oggetto = JSON.parse(theXhr.responseText);
 					operazione = oggetto.operazione;
-
+					
+					//acquirente
 					if (operazione === "notifiche"){
 				    	printNotifiche(oggetto.result, theXhr.responseText);
 					}
@@ -33,6 +34,7 @@ function request_callback( theXhr, callback ) {
 					if (operazione === "interessi"){
 				    	printInteressi(oggetto.result, theXhr.responseText);
 					}
+
 					// prenotazione
 					if (operazione === "fumettiPerPrenotazione"){
 				    	stampaFumettiPerPrenotazione(oggetto.result, theXhr.responseText);
@@ -43,6 +45,26 @@ function request_callback( theXhr, callback ) {
 					if (operazione === "richiediPrenotazione"){
 				    	risultatoPrenotazione(oggetto.result, theXhr.responseText);
 					}
+
+					
+					//negoziante
+					if (operazione === "catalogo"){
+				    	printCatalogo(oggetto.result, theXhr.responseText);
+					}
+					if (operazione === "changePrenotabile"){
+				    	printCatalogo(oggetto.result, theXhr.responseText);
+					}
+					if (operazione === "aggiungiFumettoCatalogo"){
+				    	printCatalogo(oggetto.result, theXhr.responseText);
+					}
+					if (operazione === "rimuoviFumettoCatalogo"){
+				    	printCatalogo(oggetto.result, theXhr.responseText);
+					}
+					if (operazione === "richiediListaFumetti"){
+				    	printCatalogo(oggetto.result, theXhr.responseText);
+					}
+
+					
 					//callback.innerHTML=JSON.parse(theXhr.responseText);
                 }
 	

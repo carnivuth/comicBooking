@@ -43,7 +43,11 @@ function richiediCatalogo() {
 function changePrenotabile(elementNumber) {
     fum = result[elementNumber];
     fumettoDaCambiare = JSON.stringify(fum);
-    request(uriServer + "?operazione=changePrenotabile&fumettoDaCambiare=" + fumettoDaCambiare);
+    request(uriServer + "?operazione=changePrenotabile&fumettoDaCambiare=" + fumettoDaCambiare, myGetElementById("catalogo"));
+}
+
+function richiediListaFumetti(){
+    request(uriServer + "?operazione=richiediListaFumetti", myGetElementById("fumettiAggiuntaCatalogo"))
 }
 
 function aggiungiFumetto(elementNumber) {
@@ -60,7 +64,7 @@ function aggiungiFumetto(elementNumber) {
         }
     }
 
-    request(uriServer + "?operazione=aggiungiFumettoCatalogo&fumettoDaInserire=" + fumettoDaInserire + "&quantita=" + quantita);
+    request(uriServer + "?operazione=aggiungiFumettoCatalogo&fumettoDaInserire=" + fumettoDaInserire + "&quantita=" + quantita, myGetElementById("catalogo"));
 }
 
 elencoFumetti;
@@ -84,5 +88,5 @@ function stampaFumettiPerAggiunta(callback, result) {
 function rimuoviFumettoCatalogo(elementNumber){
     fum = result[elementNumber];
     fumettoDaRimuovere = JSON.stringify(fum);
-    request(uriServer + "?operazione=rimuoviFumettoCatalogo&fumettoDaRimuovere=" + fumettoDaRimuovere);
+    request(uriServer + "?operazione=rimuoviFumettoCatalogo&fumettoDaRimuovere=" + fumettoDaRimuovere, myGetElementById("catalogo"));
 }

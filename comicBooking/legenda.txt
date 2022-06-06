@@ -14,11 +14,13 @@ result
 // l'ultima operazione mi ritorna un Boolean in result in modo che io possa sapere se l'operazione è andata a buon fine
 
 
-# Negoziante
+# Negoziante // in tutte queste 4 operazioni tornatemi sempre il catalogo aggiornato come risultato 
 ?operazione=catalogo
 "?operazione=changePrenotabile&fumettoDaCambiare=" + fumettoDaCambiare //lo passo in json
 "?operazione=aggiungiFumettoCatalogo&fumettoDaInserire=" + fumettoDaInserire + "&quantita=" + quantita
 "?operazione=rimuoviFumettoCatalogo&fumettoDaRimuovere=" + fumettoDaRimuovere
+
+"?operazione=richiediListaFumetti" // per poterne selezionare uno nuovo da aggiungere
 
 
 ---------
