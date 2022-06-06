@@ -56,6 +56,10 @@ function request_callback( theXhr, callback ) {
 					}
 					if (operazione === "aggiungiFumettoCatalogo"){
 				    	printCatalogo(oggetto.result, theXhr.responseText);
+						val = confirm("Scatenare evento?");
+						if (val == true) {
+							scatenaEvento();
+						}
 					}
 					if (operazione === "rimuoviFumettoCatalogo"){
 				    	printCatalogo(oggetto.result, theXhr.responseText);

@@ -68,6 +68,7 @@ function aggiungiFumetto(elementNumber) {
 }
 
 elencoFumetti;
+fumettoDaInserire;
 
 function stampaFumettiPerAggiunta(callback, result) {
 
@@ -89,4 +90,8 @@ function rimuoviFumettoCatalogo(elementNumber){
     fum = result[elementNumber];
     fumettoDaRimuovere = JSON.stringify(fum);
     request(uriServer + "?operazione=rimuoviFumettoCatalogo&fumettoDaRimuovere=" + fumettoDaRimuovere, myGetElementById("catalogo"));
+}
+
+function scatenaEvento(){
+    request(uriServer + "?operazione=scatenaEvento&fumettoDaInserire=" + fumettoDaInserire + "&usernameNegoziante=" + getUsername(), myGetElementById("catalogo")); 
 }
