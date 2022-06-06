@@ -1,6 +1,7 @@
 package controller.implementazioni;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -12,10 +13,14 @@ import com.google.gson.Gson;
 
 import controller.datastore.*;
 import controller.interfacce.iAcquirente.IGestioneAcquirente;
+import controller.interfacce.iAcquirente.IPrenotaFumetto;
 import controller.interfacce.iAcquirente.IVisualizzaNotifiche;
 import controller.interfacce.iPercistance.IDataStore;
 import controller.interfacce.iPercistance.IDataStoreFactory;
 import model.Wrapper;
+import model.fumetteria.Fumetteria;
+import model.fumetto.Fumetto;
+import model.user.Acquirente;
 
 public class GestioneAcquirenteController extends HttpServlet implements IGestioneAcquirente {
 
@@ -53,12 +58,45 @@ public class GestioneAcquirenteController extends HttpServlet implements IGestio
                        
                         break;
                     case "fumettiPerPrenotazione":
-                        dataStore.getFumetti();
+                        IPrenotaFumetto prenota= new PrenotaFumettoController();
+                        Wrapper w= new Wrapper();
+                        w.setResult(prenota.getFumetti());
+                        w.setOperazione("fumettiPerPrenotazione");
+                        resp.getWriter().println(g.toJson(w));
                         break;
 
-                    case "interessi":
+                    case "fumetteriePerPrenotazione":
+                        IPrenotaFumetto prenota2= new PrenotaFumettoController();
+                        String gFumetto=(String) req.getSession().getAttribute("fumetto"); 
+                        Fumetto f= g.fromJson(gFumetto, Fumetto.class);
+
+                        Wrapper w1= new Wrapper();
+                        w1.setResult(prenota2.getFumetterie(f));
+                        w1.setOperazione("fumetteriePerPrenotazione");
+                        resp.getWriter().println(g.toJson(w1));
+
                         break;  
-                    
+
+                    case "richiediPrenotazione":
+
+                        IPrenotaFumetto prenotaFinal= new PrenotaFumettoController();
+
+                        String acquirente=(String) req.getSession().getAttribute("username"); 
+                        Acquirente a= dataStore.getAcquirente(acquirente);
+
+                        String gsonFumetto=(String) req.getSession().getAttribute("fumetto"); 
+                        Fumetto fumetto= g.fromJson(gsonFumetto, Fumetto.class);
+                        String gFumetteria=(String) req.getSession().getAttribute("fumetteria"); 
+                        Fumetteria fumetteria= g.fromJson(gFumetteria, Fumetteria.class);
+                        Wrapper w2= new Wrapper();
+
+                        w2.setResult(prenotaFinal.prenotaFumetto(fumetto, fumetteria, a));
+                        w2.setOperazione("richiediPrenotazione");
+                        resp.getWriter().println(g.toJson(w2));
+                        
+                        break;  
+
+
                     default:
                         break;
                 }

@@ -18,7 +18,7 @@ public class JsonDataStoreController implements IDataStore {
 
     private Acquirente a;
     private Negoziante n;
-    private List<Fumetto> fumetti;
+   private List<Fumetto> fumetti;
 
     public JsonDataStoreController(){
         init();
@@ -102,10 +102,11 @@ public class JsonDataStoreController implements IDataStore {
 
     @Override
     public List<Fumetto> getFumetti() {
-
+       
         return fumetti;
     }
 
+  
 
     
 }
