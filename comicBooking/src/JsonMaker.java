@@ -21,6 +21,7 @@ public class JsonMaker {
         Acquirente u1=new Acquirente();
         Biblioteca b1 =new Biblioteca();
         List<Fumetto> fumettiA=new ArrayList<Fumetto>();
+        List<Fumetto> fumetti=new ArrayList<Fumetto>();
         
         Serie s=new Serie();
         s.setAutore("provaAutore");
@@ -32,6 +33,7 @@ public class JsonMaker {
         f.setDescrizione("descrizione 1");
         f.setCasaEditrice("provacasaEditrice");
         fumettiA.add(f);
+        fumetti.add(f);
 
         //creazione fumetti acquirente
          f =new Fumetto();
@@ -40,6 +42,7 @@ public class JsonMaker {
         f.setDescrizione("descrizione 2");
         f.setCasaEditrice("provacasaEditrice");
         fumettiA.add(f);
+        fumetti.add(f);
 
         
          f =new Fumetto();
@@ -48,6 +51,7 @@ public class JsonMaker {
         f.setDescrizione("descrizione 3");
         f.setCasaEditrice("provacasaEditrice");
         fumettiA.add(f);
+        fumetti.add(f);
 
         f =new Fumetto();
         f.setSerie(s);
@@ -55,6 +59,7 @@ public class JsonMaker {
         f.setDescrizione("descrizione 4");
         f.setCasaEditrice("provacasaEditrice");
         fumettiA.add(f);
+        fumetti.add(f);
        
         b1.setFumetti(fumettiA);
         u1.setBiblioteca(b1);
@@ -78,21 +83,27 @@ public class JsonMaker {
         f.setDescrizione("descrizione 5");
         f.setCasaEditrice("provacasaEditrice");
         fumettiN.add(f);
+        fumetti.add(f);
 
         
          f =new Fumetto();
         f.setSerie(s);
-        f.setNumero(5);
-        f.setDescrizione("descrizione 5");
+        f.setNumero(6);
+        f.setDescrizione("descrizione 6");
         f.setCasaEditrice("provacasaEditrice");
         fumettiN.add(f);
+        fumetti.add(f);
 
         f =new Fumetto();
         f.setSerie(s);
-        f.setNumero(5);
-        f.setDescrizione("descrizione 5");
+        f.setNumero(7);
+        f.setDescrizione("descrizione 7");
         f.setCasaEditrice("provacasaEditrice");
         fumettiN.add(f);
+        fumetti.add(f);
+        
+
+        
 
         c1.setFumetti(fumettiN);
         Gson g=new Gson();
@@ -107,6 +118,14 @@ public class JsonMaker {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(new File("./dbcomixnegoziante.json")))) {
 
             writer.write(g.toJson(n1));
+        } catch (IOException e) {
+           
+            e.printStackTrace();
+        }
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(new File("./dbcomixfuemtti.json")))) {
+
+            writer.write(g.toJson(fumetti));
         } catch (IOException e) {
            
             e.printStackTrace();

@@ -10,7 +10,6 @@ import java.util.List;
 import com.google.gson.Gson;
 
 import controller.interfacce.iPercistance.IDataStore;
-import model.fumetteria.Fumetteria;
 import model.fumetto.Fumetto;
 import model.user.Acquirente;
 import model.user.Negoziante;
@@ -19,7 +18,7 @@ public class JsonDataStoreController implements IDataStore {
 
     private Acquirente a;
     private Negoziante n;
-    private List<Fumetteria> f;
+    private List<Fumetto> fumetti;
 
     public JsonDataStoreController(){
         init();
@@ -30,17 +29,8 @@ public class JsonDataStoreController implements IDataStore {
         return a;
     }
 
-    @Override
-    public List<Negoziante> getNegozianti(){
-        List<Negoziante> list = new ArrayList<>();
-        return list;
-    }
-
-    @Override
-    public List<Fumetto> getFumetti(){
-        List<Fumetto> fumetti = new ArrayList<>();
-        return fumetti;
-    }
+    
+    
 
     @Override
     public Negoziante getNegoziante(String username) {
@@ -81,10 +71,39 @@ public class JsonDataStoreController implements IDataStore {
             n=g.fromJson(jsonData, Negoziante.class);
             
         } catch (IOException e) {
-            // TODO Auto-generated catch block
+             
             e.printStackTrace();
         }
 
+        buffer="";
+        jsonData="";
+        
+        try (BufferedReader reader = new BufferedReader(new FileReader(new File("resources/dbcomicxfumetti.json")))) {
+          
+            while((buffer=reader.readLine())!=null)jsonData+=buffer;
+            fumetti=(List<Fumetto>) g.fromJson(jsonData, ArrayList.class);
+            
+        } catch (IOException e) {
+             
+            e.printStackTrace();
+        }
+
+
+
+    }
+
+    @Override
+    public List<Negoziante> getNegozianti() {
+        
+        List<Negoziante> result=new ArrayList<>();
+        result.add(n);
+        return result;
+    }
+
+    @Override
+    public List<Fumetto> getFumetti() {
+
+        return fumetti;
     }
 
 
