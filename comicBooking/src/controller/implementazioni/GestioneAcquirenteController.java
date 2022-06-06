@@ -42,12 +42,10 @@ public class GestioneAcquirenteController extends HttpServlet implements IGestio
                         IVisualizzaNotifiche notifiche= new VisualizzaNotificheController();
                         if(req.getSession().getAttribute("username")!=null){
 
-                            String username=(String) req.getSession().getAttribute("username");
-                            IDataStore d=(IDataStore) this.getServletContext().getAttribute("dataStore");
-                            d.getAcquirente(username);
+                            String username=(String) req.getSession().getAttribute("username"); 
 
                             Wrapper w= new Wrapper();
-                            w.setResult(notifiche.getNotifiche(d.getAcquirente(username)));
+                            w.setResult(notifiche.getNotifiche(dataStore.getAcquirente(username)));
                             w.setOperazione("notifiche");
                            
                             resp.getWriter().println(g.toJson(w));
@@ -55,7 +53,7 @@ public class GestioneAcquirenteController extends HttpServlet implements IGestio
                        
                         break;
                     case "fumettiPerPrenotazione":
-                        
+                        dataStore.getFumetti();
                         break;
 
                     case "interessi":
