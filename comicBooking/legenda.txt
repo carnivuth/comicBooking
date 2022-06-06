@@ -14,5 +14,12 @@ result
 // l'ultima operazione mi ritorna un Boolean in result in modo che io possa sapere se l'operazione è andata a buon fine
 
 
+# Negoziante
+?operazione=catalogo
+"?operazione=changePrenotabile&fumettoDaCambiare=" + fumettoDaCambiare //lo passo in json
+"?operazione=aggiungiFumettoCatalogo&fumettoDaInserire=" + fumettoDaInserire + "&quantita=" + quantita
+"?operazione=rimuoviFumettoCatalogo&fumettoDaRimuovere=" + fumettoDaRimuovere
+
+
 ---------
 Il login deve creare un cookie in cui c'è l'username
