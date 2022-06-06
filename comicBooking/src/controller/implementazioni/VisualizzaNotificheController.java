@@ -9,14 +9,14 @@ public class VisualizzaNotificheController implements IVisualizzaNotifiche{
 
     @Override
     public List<Notifica> getNotifiche(Acquirente a) {
-        // TODO Auto-generated method stub
+        
         return a.getNotifiche();
         
     }
 
     @Override
     public void segnaComeGiaLetto(Notifica n) {
-        // TODO Auto-generated method stub
+       
         n.segnaComeLetto();
     }
     
