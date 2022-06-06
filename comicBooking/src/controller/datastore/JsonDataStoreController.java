@@ -101,6 +101,13 @@ public class JsonDataStoreController implements IDataStore {
     }
 
     @Override
+    public List<Acquirente> getAcquirenti() {
+        
+        List<Acquirente> result=new ArrayList<>();
+        result.add(a);
+        return result;
+    }
+    @Override
     public List<Fumetto> getFumetti() {
        
         return fumetti;

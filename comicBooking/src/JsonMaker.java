@@ -73,6 +73,7 @@ public class JsonMaker {
         f1.setCitta("bologna");
         f1.setIndirizzo("indirizzo");
         f1.setNome("nome");
+        u1.getInteressi().aggiungiInteresse(f1);
         Catalogo c1=new Catalogo();
         List<Fumetto> fumettiN=new ArrayList<Fumetto>();
 

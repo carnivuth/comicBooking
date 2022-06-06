@@ -11,6 +11,7 @@ public interface IDataStore {
     public Acquirente getAcquirente(String username);
     public Negoziante getNegoziante(String username);
     public List<Negoziante> getNegozianti();
+    public List<Acquirente> getAcquirenti();
     public void setAcquirente(Acquirente a);
     public void setNegoziante(Negoziante n);
     public List<Fumetto> getFumetti();

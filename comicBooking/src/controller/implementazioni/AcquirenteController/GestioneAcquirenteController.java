@@ -1,7 +1,6 @@
-package controller.implementazioni;
+package controller.implementazioni.AcquirenteController;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -12,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 
 import controller.datastore.*;
+import controller.implementazioni.VisualizzaNotificheController;
 import controller.interfacce.iAcquirente.IGestioneAcquirente;
 import controller.interfacce.iAcquirente.IPrenotaFumetto;
 import controller.interfacce.iAcquirente.IVisualizzaNotifiche;
