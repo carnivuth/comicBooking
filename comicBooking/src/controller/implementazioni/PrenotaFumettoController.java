@@ -85,12 +85,9 @@ public class PrenotaFumettoController implements IPrenotaFumetto{
 
     @Override
     public List<Fumetto> getFumetti() {
-        // TODO Auto-generated method stub
+        
         List<Fumetto>fumetti=new ArrayList<Fumetto>();
-
-        IDataStoreFactory factory = new DataStoreControllerFactory();
-        IDataStore dataStore= factory.createInstance();
-        fumetti=dataStore.getFumetti();
+        fumetti=GestioneAcquirenteController.dataStore.getFumetti();
 
         return fumetti;
     }

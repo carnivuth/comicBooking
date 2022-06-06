@@ -81,7 +81,7 @@ public class JsonDataStoreController implements IDataStore {
         try (BufferedReader reader = new BufferedReader(new FileReader(new File("resources/dbcomicxfumetti.json")))) {
           
             while((buffer=reader.readLine())!=null)jsonData+=buffer;
-            fumetti=(List<Fumetto>) g.fromJson(jsonData, ArrayList.class);
+            fumetti=(List<Fumetto>) g.fromJson(jsonData, List.class);
             
         } catch (IOException e) {
              

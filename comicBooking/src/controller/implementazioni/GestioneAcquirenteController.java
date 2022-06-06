@@ -19,14 +19,14 @@ import model.Wrapper;
 
 public class GestioneAcquirenteController extends HttpServlet implements IGestioneAcquirente {
 
-  
+    public static  IDataStore dataStore;
     @Override
     public void init(ServletConfig conf) throws ServletException {
 
         super.init(conf);
         IDataStoreFactory factory = new DataStoreControllerFactory();
-        IDataStore dataStore= factory.createInstance();
-        this.getServletContext().setAttribute("dataStore", dataStore);
+         dataStore= factory.createInstance();
+        
     }
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -74,4 +74,6 @@ public class GestioneAcquirenteController extends HttpServlet implements IGestio
 
         return null;
     }
+
+   
 }
