@@ -23,6 +23,8 @@ result
 "?operazione=richiediListaFumetti" // per poterne selezionare uno nuovo da aggiungere
 "?operazione=scatenaEvento&fumettoDaInserire=" + fumettoDaInserire + "&usernameNegoziante=" + getUsername()
 
+"?operazione=visualizzaPrenotazioni"
 
 ---------
 Il login deve creare un cookie in cui c'è l'username
+Il login torna in get un parametro "errore" con all'interna una stringa
