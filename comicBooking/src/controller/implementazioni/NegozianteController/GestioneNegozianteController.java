@@ -104,7 +104,7 @@ public class GestioneNegozianteController extends HttpServlet implements IGestio
 
     @Override
     public String getUsername() {
-        // TODO Auto-generated method stub
+        
         return null;
     }
     

@@ -19,7 +19,7 @@ public class PrenotaFumettoController implements IPrenotaFumetto{
 
     @Override
     public boolean prenotaFumetto(Fumetto fu, Fumetteria f, Acquirente a) {
-        // TODO Auto-generated method stub
+        
         Prenotazione p=new Prenotazione();
         p.setAcquirente(a);
 
@@ -44,7 +44,7 @@ public class PrenotaFumettoController implements IPrenotaFumetto{
 
     @Override
     public List<Fumetteria> getFumetterie(Fumetto f) {
-        // TODO Auto-generated method stub
+        
         List<Fumetteria>fumetterie=new ArrayList<Fumetteria>();
 
         IDataStoreFactory factory = new DataStoreControllerFactory();
