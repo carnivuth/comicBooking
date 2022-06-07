@@ -11,8 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 
 import controller.datastore.DataStoreControllerFactory;
+import controller.implementazioni.AcquirenteController.VisualizzaNotificheController;
 import controller.interfacce.iNegoziante.IGestioneCatalogo;
 import controller.interfacce.iNegoziante.IGestioneNegoziante;
+import controller.interfacce.iNegoziante.IPrenotazione;
 import controller.interfacce.iPercistance.IDataStore;
 import controller.interfacce.iPercistance.IDataStoreFactory;
 import model.Wrapper;
@@ -114,6 +116,17 @@ public class GestioneNegozianteController extends HttpServlet implements IGestio
                 c4.scatenaEvento(true, fumetto, dataStore.getNegoziante(user).getFumetteria());
                 break; 
 
+            case "visualizzaPrenotazioni":
+                IPrenotazione p=new PrenotazioneController();
+                String userN=(String) req.getSession().getAttribute("username"); 
+
+                Wrapper w5= new Wrapper();
+                w5.setResult(p.getPrenotazioni(dataStore.getNegoziante(userN).getFumetteria()));
+                w5.setOperazione("visualizzaPrenotazioni");
+
+                resp.getWriter().println(g.toJson(w5));
+                break;
+                
             default:
                 break;
         }
