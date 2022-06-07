@@ -16,31 +16,31 @@ public class GestioneCatalogoController implements IGestioneCatalogo{
 
     @Override
     public boolean rendiVolumePrenotabile(Fumetto f, Integer giorni, Negoziante n) {
-        // TODO Auto-generated method stub
+        
         return n.getFumetteria().getCatalogo().rendiVolumePrenotabile(f, giorni);
     }
 
     @Override
     public boolean rendiVolumeNonPrenotabile(Fumetto f, Negoziante n) {
-        // TODO Auto-generated method stub
+        
         return n.getFumetteria().getCatalogo().rendiVolumeNonPrenotabile(f);
     }
 
     @Override
     public boolean aggiungiFumetto(Fumetto f, int disponibilita, Negoziante n) {
-        // TODO Auto-generated method stub
+      
         return n.getFumetteria().getCatalogo().aggiungiFumetto(f, disponibilita);
     }
 
     @Override
     public boolean rimuoviFumetto(Fumetto f, Negoziante n) {
-        // TODO Auto-generated method stub
+       
         return n.getFumetteria().getCatalogo().rimuoviFumetto(f);
     }
 
     @Override
     public void scatenaEvento(boolean b, Fumetto f,Fumetteria fumetteria) {
-        // TODO Auto-generated method stub
+        
         List<Acquirente> acquirenti=GestioneNegozianteController.dataStore.getAcquirenti();
         for(Acquirente a : acquirenti){
             for(Interesse i:a.getInteressi().getInteressi()){
@@ -60,7 +60,7 @@ public class GestioneCatalogoController implements IGestioneCatalogo{
 
     @Override
     public Catalogo getCatalogo(Negoziante n) {
-        // TODO Auto-generated method stub
+        
         return n.getFumetteria().getCatalogo();
     }
     
