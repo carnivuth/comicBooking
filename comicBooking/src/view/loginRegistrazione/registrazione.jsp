@@ -3,8 +3,6 @@
         <!--%@ page import="servlets.Login"%-->
         <%@ page import="java.util.*" %>
 
-        <%@ page import="javax.servlet.*"%>
-
             <html>
 
             <head>
@@ -22,23 +20,15 @@
             </head>
 
             <body>
-
-                <script>
-                    function gotoRegistrazione() {
-                        window.location.href = uriServer + "registrazione";
-                    }
-                </script>
-
-
                 <section class="hero is-fullheight">
                     <div class="hero-body">
                         <div class="container has-text-centered">
                             <div class="column is-4 is-offset-4">
                                 <div class="box">
                                     <img src="./media/comic1.png" width="50">
-                                    <p class="subtitle is-4">Accedi per poter iniziare!</p>
+                                    <p class="subtitle is-4">Registrati prima di continuare!</p>
 
-                                    <form name="loginForm" method="post" action="Login?req=login">
+                                    <form name="register" method="post" action="Login?req=registration">
                                         <div class="">
                                             <p class="control has-icons-left has-icons-right">
                                                 <input class="input is-medium" type="username" placeholder="Username" />
@@ -60,38 +50,56 @@
                                             </p>
                                         </div>
                                         <!--div class="field">
-                    <label class="checkbox">
-                      <input type="checkbox" />
-                      Remember me
-                    </label>
+                    <p class="control has-icons-left">
+                      <input class="input is-medium" type="password" placeholder="Confirm password" />
+                      <span class="icon is-small is-left">
+                        <i class="fas fa-lock"></i>
+                      </span>
+                    </p>
                   </div-->
-                                        <button
-                                            class="button is-block is-info is-large is-fullwidth is-rounded ">Accedi</button><br />
 
-                                    </form>
+                                        <fieldse align="center">
+                                            <legend>Scegli il tipo di utente:</legend>
+
+                                            </fieldset>
+
+                                            <div class="languages select is-rounded">
+                                                <select>
+                                                    <option selected>Acquirente</option>
+                                                    <option>Negoziante</option>
+                                                </select>
+                                            </div>
                                 </div>
-                                <!--p class="has-text-grey">
-                <a href="#">Sign Up</a>
-              </p-->
+
+                                <!--div class="field">
+                  <label class="checkbox">
+                    <input type="checkbox" />
+                    Remember me
+                  </label>
+                </div-->
                                 <button
-                                    class="button is-block button is-dark  is-small is-fullwidth is-rounded is-outlined"
-                                    onclick="gotoRegistrazione()">Registrati</button><br />
+                                    class="button is-block is-info is-large is-fullwidth is-rounded ">Registrati</button><br />
+
+                                </form>
                             </div>
+                            <!--p class="has-text-grey">
+              <a href="#">Sign Up</a>
+            </p-->
+
                         </div>
                     </div>
-                        
-                    <% 
-                        if (request.getParameter("errore")!=null){
-                            String errore = request.getParameter("errore");
-                           
-                    %>
-                            <br>
-                            Errore: <%= errore %>
-                    <%		
-                        }
-                    %>
+                    </div>
 
                 </section>
             </body>
 
             </html>
+
+
+
+
+
+
+
+
+
