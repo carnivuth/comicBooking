@@ -66,7 +66,7 @@ public class GestioneAcquirenteController extends HttpServlet implements IGestio
 
                     case "fumetteriePerPrenotazione":
                         IPrenotaFumetto prenota2= new PrenotaFumettoController();
-                        String gFumetto=(String) req.getSession().getAttribute("fumetto"); 
+                        String gFumetto=(String) req.getAttribute("fumetto"); 
                         Fumetto f= g.fromJson(gFumetto, Fumetto.class);
 
                         Wrapper w1= new Wrapper();
@@ -83,9 +83,9 @@ public class GestioneAcquirenteController extends HttpServlet implements IGestio
                         String acquirente=(String) req.getSession().getAttribute("username"); 
                         Acquirente a= dataStore.getAcquirente(acquirente);
 
-                        String gsonFumetto=(String) req.getSession().getAttribute("fumetto"); 
+                        String gsonFumetto=(String) req.getAttribute("fumetto"); 
                         Fumetto fumetto= g.fromJson(gsonFumetto, Fumetto.class);
-                        String gFumetteria=(String) req.getSession().getAttribute("fumetteria"); 
+                        String gFumetteria=(String) req.getAttribute("fumetteria"); 
                         Fumetteria fumetteria= g.fromJson(gFumetteria, Fumetteria.class);
                         Wrapper w2= new Wrapper();
 
