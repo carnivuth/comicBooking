@@ -74,6 +74,8 @@ public class GestioneNegozianteController extends HttpServlet implements IGestio
                 Wrapper w2= new Wrapper();
                 w2.setResult(c2.getCatalogo (dataStore.getNegoziante(negoz)));
                 w2.setOperazione("aggiungiFumettoCatalogo");
+
+                resp.getWriter().println(g.toJson(w2));
                 break;
 
             case "rimuoviFumettoCatalogo":
@@ -88,13 +90,29 @@ public class GestioneNegozianteController extends HttpServlet implements IGestio
                 w3.setResult(c3.getCatalogo (dataStore.getNegoziante(n)));
                 w3.setOperazione("rimuoviFumettoCatalogo");
 
+                resp.getWriter().println(g.toJson(w3));
+
                 break;  
 
             case "richiediListaFumetti":
 
-               
-                
+                Wrapper w4= new Wrapper();
+                w4.setResult(dataStore.getFumetti());
+                w4.setOperazione("rimuoviFumettoCatalogo");
+
+                resp.getWriter().println(g.toJson(w4));
                 break;  
+
+            
+            case "scatenaEvento":
+                IGestioneCatalogo c4=new GestioneCatalogoController();
+                
+                String user=(String) req.getAttribute("username"); 
+                String nomef=(String) req.getAttribute("fumettoDaRimuovere"); 
+                Fumetto fumetto= g.fromJson(nomef, Fumetto.class);
+
+                c4.scatenaEvento(true, fumetto, dataStore.getNegoziante(user).getFumetteria());
+                break; 
 
             default:
                 break;
