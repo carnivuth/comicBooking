@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 
 import controller.datastore.DataStoreControllerFactory;
-import controller.implementazioni.AcquirenteController.VisualizzaNotificheController;
 import controller.interfacce.iNegoziante.IGestioneCatalogo;
 import controller.interfacce.iNegoziante.IGestioneNegoziante;
 import controller.interfacce.iNegoziante.IPrenotazione;
@@ -126,7 +125,7 @@ public class GestioneNegozianteController extends HttpServlet implements IGestio
 
                 resp.getWriter().println(g.toJson(w5));
                 break;
-                
+
             default:
                 break;
         }
