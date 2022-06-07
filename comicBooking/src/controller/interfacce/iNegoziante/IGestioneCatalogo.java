@@ -1,6 +1,6 @@
 package controller.interfacce.iNegoziante;
 
-import java.util.List;
+
 
 import model.fumetteria.Catalogo;
 import model.fumetteria.Fumetteria;
