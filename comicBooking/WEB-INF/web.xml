@@ -19,21 +19,21 @@
     <!-- Define servlets that are included in the application -->
 	<servlet>
         <servlet-name>Login</servlet-name>
-        <servlet-class>servlets.Login</servlet-class>
+        <servlet-class>controller.login.LoginController</servlet-class>
 <load-on-startup>0</load-on-startup>
     </servlet>
 	
-	<servlet>
+	<!--servlet>
         <servlet-name>Registra</servlet-name>
         <servlet-class>servlets.Registra</servlet-class>
 <load-on-startup>0</load-on-startup>
-    </servlet> 
+    </servlet--> 
     
-    <servlet>
+    <!--servlet>
         <servlet-name>Calcola</servlet-name>
         <servlet-class>servlets.Calcola</servlet-class>
 <load-on-startup>0</load-on-startup>
-    </servlet>  
+    </servlet-->  
     
     
     <servlet-mapping>
@@ -41,34 +41,34 @@
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
 	
-	  <servlet-mapping>
+	  <!--servlet-mapping>
         <servlet-name>Registra</servlet-name>
         <url-pattern>/registra</url-pattern>
-    </servlet-mapping>
+    </servlet-mapping-->
     
-     <servlet-mapping>
+     <!--servlet-mapping>
         <servlet-name>Calcola</servlet-name>
         <url-pattern>/calcola</url-pattern>
-    </servlet-mapping>
+    </servlet-mapping-->
 
 
 	<!-- Welcome pages -->
 	<!-- pleonastico: tomcat "tenta" in automatico le index.html e index.jsp -->
 	
 	<welcome-file-list>
-		<welcome-file>login.html</welcome-file>
+		<welcome-file>login.jsp</welcome-file>
 	</welcome-file-list>
 		
 	<!-- Handle exceptions and errors -->
 	
 	<error-page>
 		<error-code>404</error-code>
-		<location>/errors/notfound.html</location>
+		<location>/view/errors/notfound.html</location>
 	</error-page>
 
 	<error-page>
 		<exception-type>javax.servlet.ServletException</exception-type>
-		<location>/errors/failure.jsp</location>
+		<location>/view/errors/failure.jsp</location>
 	</error-page>
 	 
 </web-app>
