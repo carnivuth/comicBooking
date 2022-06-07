@@ -65,8 +65,14 @@ function request_callback( theXhr, callback ) {
 				    	printCatalogo(oggetto.result, theXhr.responseText);
 					}
 					if (operazione === "richiediListaFumetti"){
-				    	printCatalogo(oggetto.result, theXhr.responseText);
+				    	stampaFumettiPerAggiunta(oggetto.result, theXhr.responseText);
 					}
+
+
+					if (operazione === "visualizzaPrenotazioni"){
+				    	printPrenotazioniNegoziante(oggetto.result, theXhr.responseText);
+					}
+
 
 					
 					//callback.innerHTML=JSON.parse(theXhr.responseText);
