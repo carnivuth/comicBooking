@@ -16,7 +16,7 @@ result
 
 # Negoziante // in tutte queste 4 operazioni tornatemi sempre il catalogo aggiornato come risultato 
 ?operazione=catalogo
-"?operazione=changePrenotabile&fumettoDaCambiare=" + fumettoDaCambiare //lo passo in json
+"?operazione=changePrenotabile&fumettoDaCambiare=" + fumettoDaCambiare + "&giorni=" + giorni //lo passo in json
 "?operazione=aggiungiFumettoCatalogo&fumettoDaInserire=" + fumettoDaInserire + "&quantita=" + quantita
 "?operazione=rimuoviFumettoCatalogo&fumettoDaRimuovere=" + fumettoDaRimuovere
 

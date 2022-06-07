@@ -43,7 +43,18 @@ function richiediCatalogo() {
 function changePrenotabile(elementNumber) {
     fum = result[elementNumber];
     fumettoDaCambiare = JSON.stringify(fum);
-    request(uriServer + "?operazione=changePrenotabile&fumettoDaCambiare=" + fumettoDaCambiare, myGetElementById("catalogo"));
+
+    ok = false;
+    giorni;
+    while (!ok){
+        pr = prompt("Inserisci la quantità");
+        giorni = parseInt(quantita);
+        if (quantita > 0){
+            ok = true;
+        }
+    }
+
+    request(uriServer + "?operazione=changePrenotabile&fumettoDaCambiare=" + fumettoDaCambiare + "&giorni=" + giorni, myGetElementById("catalogo"));
 }
 
 function richiediListaFumetti(){

@@ -115,9 +115,10 @@ function requestAJAX(theUri, theXhr, callback) {
 	// impostazione richiesta asincrona in GET
 	// del file specificato
 	try {
-		theXhr.open("get", theUri, true);
-		// https://github.com/FlippaFloppa/TecWeb-Templates/blob/main/utils/util.txt   riga 170
-		//theXhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		theXhr.open("post", theUri, true);
+		theXhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+		theXhr.setRequestHeader("connection", "close");
+		theXhr.send("p1=json&p2="+JSON.stringify(request));
 	}
 	catch(e) {
 		// Exceptions are raised when trying to access cross-domain URIs 
@@ -125,6 +126,8 @@ function requestAJAX(theUri, theXhr, callback) {
 	}
 
 	// invio richiesta
+	theXhr.open("get", uri, true);
+	theXhr.setRequestHeader("connection", "close");
 	theXhr.send(null);
 
 } // requestRandomIntGenerationAJAX()
