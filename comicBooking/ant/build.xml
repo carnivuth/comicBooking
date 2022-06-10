@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<project name="TW_Esame_StartingKit" basedir=".." default="02.print.properties">
+<project name="Comic_Booking_App" basedir=".." default="02.print.properties">
 
 	<!-- ================ -->
 	<!-- Properties setup -->
