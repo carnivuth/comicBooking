@@ -1,5 +1,5 @@
-
-uriServer = "http://localhost:8080/TW_Esame_StartingKit/";
+nameProject = "Comic_Booking_App";
+uriServer = "http://localhost:8080/" + nameProject + "/";
 uriServerNegoziante = uriServer + "negoziante";
 uriServerAcquirente = uriServer + "acquirente";
 uriRegistrazione = uriServer + registrazione.jsp;
@@ -23,7 +23,7 @@ function gotoHomeNegoziante(){
 }
 
 function gotoLogin(){
-    window.location.href = "http://localhost:8080/TW_Esame_StartingKit/view/html/loginRegistrazione/login.jsp";
+    window.location.href = uriServer + "view/html/loginRegistrazione/login.jsp";
 }
 
 function gotoRegistrazione() {
