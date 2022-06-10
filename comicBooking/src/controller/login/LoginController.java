@@ -41,7 +41,8 @@ public class LoginController extends HttpServlet implements ILogin{
         
         String u = req.getParameter("username");
 		String p = req.getParameter("password");
-
+        System.out.println(u);
+        System.out.println(p);
         if (u!=null && p!=null){
             String ruolo = this.verificaCredenziali(u, p);
 
@@ -64,7 +65,10 @@ public class LoginController extends HttpServlet implements ILogin{
                 resp.getWriter().println(g.toJson(res));
                 //resp.sendRedirect(req.getContextPath()+"/index.jsp");
             }
+        }else{
+            resp.getWriter().println("g.toJson(res)");
         }
+        
     }
 
     

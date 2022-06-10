@@ -42,7 +42,8 @@
                                     <form name="loginForm" method="post" action="../../../login">
                                         <div class="">
                                             <p class="control has-icons-left has-icons-right">
-                                                <input class="input is-medium" type="username" placeholder="Username" />
+                                                <input class="input is-medium" type="username" placeholder="Username" name="username"
+                                                />
                                                 <span class="icon is-medium is-left">
                                                     <i class="fas fa-file-user"></i>
                                                     <i style='font-size:24px' class='fas'>&#xf406;</i>
@@ -54,7 +55,7 @@
                                         </div>
                                         <div class="field">
                                             <p class="control has-icons-left">
-                                                <input class="input is-medium" type="password" placeholder="Password" />
+                                                <input class="input is-medium" type="password" placeholder="Password" name="password"/>
                                                 <span class="icon is-small is-left">
                                                     <i class="fas fa-lock"></i>
                                                 </span>
