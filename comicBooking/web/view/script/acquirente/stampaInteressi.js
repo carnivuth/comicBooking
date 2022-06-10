@@ -24,5 +24,5 @@ function printInteressi(callback, result){
 }
 
 function richiediInteressi(){
-    request(uriServer + "?operazione=interessi", myGetElementById("interessi"));
+    request(uriServerAcquirente + "?operazione=interessi", myGetElementById("interessi"));
 }

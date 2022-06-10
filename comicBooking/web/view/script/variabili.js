@@ -1,5 +1,5 @@
 
-uriServer = "http://localhost:8080/fumetto/";
+uriServer = "http://localhost:8080/TW_Esame_StartingKit/";
 uriServerNegoziante = uriServer + "negoziante";
 uriServerAcquirente = uriServer + "acquirente";
 uriRegistrazione = uriServer + registrazione.jsp;

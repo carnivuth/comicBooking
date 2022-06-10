@@ -37,7 +37,7 @@ function printCatalogo(callback, result) {
 }
 
 function richiediCatalogo() {
-    request(uriServer + "?operazione=catalogo", myGetElementById("catalogo"));
+    request(uriServerNegoziante + "?operazione=catalogo", myGetElementById("catalogo"));
 }
 
 function changePrenotabile(elementNumber) {
@@ -54,11 +54,11 @@ function changePrenotabile(elementNumber) {
         }
     }
 
-    request(uriServer + "?operazione=changePrenotabile&fumettoDaCambiare=" + fumettoDaCambiare + "&giorni=" + giorni, myGetElementById("catalogo"));
+    request(uriServerNegoziante + "?operazione=changePrenotabile&fumettoDaCambiare=" + fumettoDaCambiare + "&giorni=" + giorni, myGetElementById("catalogo"));
 }
 
 function richiediListaFumetti(){
-    request(uriServer + "?operazione=richiediListaFumetti", myGetElementById("fumettiAggiuntaCatalogo"))
+    request(uriServerNegoziante + "?operazione=richiediListaFumetti", myGetElementById("fumettiAggiuntaCatalogo"))
 }
 
 function aggiungiFumetto(elementNumber) {
@@ -75,7 +75,7 @@ function aggiungiFumetto(elementNumber) {
         }
     }
 
-    request(uriServer + "?operazione=aggiungiFumettoCatalogo&fumettoDaInserire=" + fumettoDaInserire + "&quantita=" + quantita, myGetElementById("catalogo"));
+    request(uriServerNegoziante + "?operazione=aggiungiFumettoCatalogo&fumettoDaInserire=" + fumettoDaInserire + "&quantita=" + quantita, myGetElementById("catalogo"));
 }
 
 elencoFumetti;
@@ -104,5 +104,5 @@ function rimuoviFumettoCatalogo(elementNumber){
 }
 
 function scatenaEvento(){
-    request(uriServer + "?operazione=scatenaEvento&fumettoDaInserire=" + fumettoDaInserire + "&usernameNegoziante=" + getUsername(), myGetElementById("catalogo")); 
+    request(uriServerNegoziante + "?operazione=scatenaEvento&fumettoDaInserire=" + fumettoDaInserire + "&usernameNegoziante=" + getUsername(), myGetElementById("catalogo")); 
 }
