@@ -43,12 +43,12 @@
 	
 	  <servlet-mapping>
         <servlet-name>HomeAcquirente</servlet-name>
-        <url-pattern>/homeAcquirente</url-pattern>
+        <url-pattern>/acquirente</url-pattern>
     </servlet-mapping>
     
      <servlet-mapping>
         <servlet-name>HomeNegoziante</servlet-name>
-        <url-pattern>/homeNegoziante</url-pattern>
+        <url-pattern>/negoziante</url-pattern>
     </servlet-mapping>
 
 

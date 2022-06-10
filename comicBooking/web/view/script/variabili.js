@@ -1,5 +1,7 @@
 
 uriServer = "http://localhost:8080/fumetto/";
+uriServerNegoziante = uriServer + "negoziante";
+uriServerAcquirente = uriServer + "acquirente";
 uriRegistrazione = uriServer + registrazione.jsp;
 uriHomeNegoziante = uriServer + HomeGestioneNegoziante.html;
 uriHomeAcquirente = uriServer + HomeGestioneAcquirente.html;
@@ -18,4 +20,12 @@ function gotoHomeAcquirente(){
 
 function gotoHomeNegoziante(){
     window.location.href = uriHomeNegoziante;
+}
+
+function gotoLogin(){
+    window.location.href = "http://localhost:8080/TW_Esame_StartingKit/view/html/loginRegistrazione/login.jsp";
+}
+
+function gotoRegistrazione() {
+    window.location.href = uriServer + "registrazione";
 }

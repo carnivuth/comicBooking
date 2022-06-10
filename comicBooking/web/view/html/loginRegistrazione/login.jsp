@@ -19,6 +19,7 @@
                 <link rel="stylesheet"
                     href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css" />
                 <link rel="stylesheet" href="../../../view/css/styles.css" />
+                <script src="./../../script/variabili.js"></script> 
             </head>
 
             <body>
@@ -38,7 +39,7 @@
                                     <img src="./media/comic1.png" width="50">
                                     <p class="subtitle is-4">Accedi per poter iniziare!</p>
 
-                                    <form name="loginForm" method="post" action="Login?req=login">
+                                    <form name="loginForm" method="post" action="login">
                                         <div class="">
                                             <p class="control has-icons-left has-icons-right">
                                                 <input class="input is-medium" type="username" placeholder="Username" />
