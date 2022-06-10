@@ -1,5 +1,5 @@
 function richiediFumettiPerPrenotazione(){
-    request(uriServer + "?operazione=fumettiPerPrenotazione", myGetElementById("fumettiPerPrenotazione"));
+    request(uriServerAcquirente + "?operazione=fumettiPerPrenotazione", myGetElementById("fumettiPerPrenotazione"));
 }
 
 fumetti
@@ -24,7 +24,7 @@ function richiediFumetteriaPerPrenotazione(numeroFumetto){
     numeroFumetto = parseInt(numeroFumetto);
     f = fumetti[numeroFumetto];
     jsonFumetto = JSON.stringify(f);
-    request(uriServer + "?operazione=fumetteriePerPrenotazione&fumetto="+jsonFumetto, myGetElementById("fumettiPerPrenotazione"));
+    request(uriServerAcquirente + "?operazione=fumetteriePerPrenotazione&fumetto="+jsonFumetto, myGetElementById("fumettiPerPrenotazione"));
 }
 
 fumetterie
@@ -50,7 +50,7 @@ function richiediPrenotazione(numeroFumetteria){
     f = fumetterie[numeroFumetteria];
     jsonFumetteria = JSON.stringify(f);
 
-    request(uriServer + "?operazione=richiediPrenotazione&fumetto=" + jsonFumetto + "&fumetteria" + jsonFumetteria, myGetElementById("fumettiPerPrenotazione"));
+    request(uriServerAcquirente + "?operazione=richiediPrenotazione&fumetto=" + jsonFumetto + "&fumetteria" + jsonFumetteria, myGetElementById("fumettiPerPrenotazione"));
 
 }
 
