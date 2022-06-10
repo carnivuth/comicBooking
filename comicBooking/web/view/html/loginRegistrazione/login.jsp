@@ -39,7 +39,7 @@
                                     <img src="./media/comic1.png" width="50">
                                     <p class="subtitle is-4">Accedi per poter iniziare!</p>
 
-                                    <form name="loginForm" method="post" action="login">
+                                    <form name="loginForm" method="post" action="../../../login">
                                         <div class="">
                                             <p class="control has-icons-left has-icons-right">
                                                 <input class="input is-medium" type="username" placeholder="Username" />
