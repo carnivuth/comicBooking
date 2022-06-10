@@ -36,7 +36,16 @@ function gotoRegistrazione() {
 function gotoGestioneBiblioteca(){
     window.location.href = uriHtmlAcquirente + "GestioneBiblioteca.html";
 }
-
 function gotoGestioneInteressi(){
     window.location.href = uriHtmlAcquirente + "GestioneInteressi.html";
+}
+function gotoPrenotaFumetto(){
+    window.location.href = uriHtmlAcquirente + "PrenotaFumetto.html";
+}
+function gotoVisualizzaNotifiche(){
+    window.location.href = uriHtmlAcquirente + "ViewVisualizzaNotifiche.html";
+}
+
+function gotoGestioneCatalogo() {
+    window.location.href = uriHtmlNegoziante + "";
 }
