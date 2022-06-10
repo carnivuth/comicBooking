@@ -2,11 +2,14 @@ nameProject = "Comic_Booking_App";
 uriServer = "http://localhost:8080/" + nameProject + "/";
 uriServerNegoziante = uriServer + "negoziante";
 uriServerAcquirente = uriServer + "acquirente";
-uriRegistrazione = uriServer + registrazione.jsp;
-uriHomeNegoziante = uriServer + HomeGestioneNegoziante.html;
-uriHomeAcquirente = uriServer + HomeGestioneAcquirente.html;
+uriRegistrazione = uriServer + "registrazione.jsp";
+uriHomeNegoziante = uriServer + "HomeGestioneNegoziante.html";
+uriHomeAcquirente = uriServer + "HomeGestioneAcquirente.html";
 
-tab = "\t"
+uriHtmlNegoziante = uriServer + "view/html/" + "negoziante/";
+uriHtmlAcquirente = uriServer + "view/html/" + "acquirente/";
+
+tab = "\t";
 
 
 function getUsername(){
@@ -28,4 +31,12 @@ function gotoLogin(){
 
 function gotoRegistrazione() {
     window.location.href = uriServer + "registrazione";
+}
+
+function gotoGestioneBiblioteca(){
+    window.location.href = uriHtmlAcquirente + "GestioneBiblioteca.html";
+}
+
+function gotoGestioneInteressi(){
+    window.location.href = uriHtmlAcquirente + "GestioneInteressi.html";
 }
