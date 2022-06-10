@@ -23,17 +23,17 @@
 <load-on-startup>0</load-on-startup>
     </servlet>
 	
-	<!--servlet>
-        <servlet-name>Registra</servlet-name>
-        <servlet-class>servlets.Registra</servlet-class>
+	<servlet>
+        <servlet-name>HomeAcquirente</servlet-name>
+        <servlet-class>controller.implementazioni.AcquirenteController.GestioneAcquirenteController</servlet-class>
 <load-on-startup>0</load-on-startup>
-    </servlet--> 
+    </servlet> 
     
-    <!--servlet>
-        <servlet-name>Calcola</servlet-name>
-        <servlet-class>servlets.Calcola</servlet-class>
+    <servlet>
+        <servlet-name>HomeNegoziante</servlet-name>
+        <servlet-class>controller.implementazioni.NegozianteController.GestioneNegozianteController</servlet-class>
 <load-on-startup>0</load-on-startup>
-    </servlet-->  
+    </servlet>  
     
     
     <servlet-mapping>
@@ -41,23 +41,23 @@
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
 	
-	  <!--servlet-mapping>
-        <servlet-name>Registra</servlet-name>
-        <url-pattern>/registra</url-pattern>
-    </servlet-mapping-->
+	  <servlet-mapping>
+        <servlet-name>HomeAcquirente</servlet-name>
+        <url-pattern>/homeAcquirente</url-pattern>
+    </servlet-mapping>
     
-     <!--servlet-mapping>
-        <servlet-name>Calcola</servlet-name>
-        <url-pattern>/calcola</url-pattern>
-    </servlet-mapping-->
+     <servlet-mapping>
+        <servlet-name>HomeNegoziante</servlet-name>
+        <url-pattern>/homeNegoziante</url-pattern>
+    </servlet-mapping>
 
 
 	<!-- Welcome pages -->
 	<!-- pleonastico: tomcat "tenta" in automatico le index.html e index.jsp -->
 	
-	<welcome-file-list>
+	<!--welcome-file-list>
 		<welcome-file>login.jsp</welcome-file>
-	</welcome-file-list>
+	</welcome-file-list-->
 		
 	<!-- Handle exceptions and errors -->
 	
