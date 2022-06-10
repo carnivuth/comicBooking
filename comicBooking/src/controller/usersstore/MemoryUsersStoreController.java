@@ -18,14 +18,14 @@ public class MemoryUsersStoreController implements IUsersStore {
     }
 
     private void init(){
-        Utente u=new Utente();
+        Utente u=new Acquirente();
         u.setUsername("pippo");
         u.setBloccato(false);
         u.setNumeroTentativi(0);
         usersPassword.put(u, "pippo");
 
 
-        u=new Utente();
+        u=new Negoziante();
         u.setUsername("pluto");
         u.setBloccato(false);
         u.setNumeroTentativi(0);
