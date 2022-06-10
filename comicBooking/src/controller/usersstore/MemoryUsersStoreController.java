@@ -45,18 +45,21 @@ public class MemoryUsersStoreController implements IUsersStore {
                             return "Negoziante";
                         }
                     }
-                if(u.getNumeroTentativi()>=3){
-                    u.setBloccato(true);
-                    u.setTimestampBlocco(LocalDateTime.now());
-                }else{
-                    u.setNumeroTentativi(u.getNumeroTentativi()+1);
 
+                    if(u.getNumeroTentativi()>=3){
+                        u.setBloccato(true);
+                        u.setTimestampBlocco(LocalDateTime.now());
+                    }else{
+                        u.setNumeroTentativi(u.getNumeroTentativi()+1);
+    
+                    }
+                }
+
+                else if(u.getTimestampBlocco().plusMinutes(1).isAfter(LocalDateTime.now())){
+                    u.setBloccato(false);
+                    u.setNumeroTentativi(0);
                 }
                 
-                }
-                if(u.getTimestampBlocco().plusMinutes(1).isAfter(LocalDateTime.now())){
-                    u.setBloccato(false);
-                }
             }
         }
         return "false";
