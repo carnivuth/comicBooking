@@ -39,6 +39,9 @@ public class LoginController extends HttpServlet implements ILogin{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         
+        String pathAcquirente = "/view/html/acquirente/HomeGestioneAcquirente.html";
+        String pathNegoziante = "/view/html/negoziante/HomeGestioneNegoziante.html";
+
         String u = req.getParameter("username");
 		String p = req.getParameter("password");
         System.out.println(u);
@@ -53,10 +56,10 @@ public class LoginController extends HttpServlet implements ILogin{
                 resp.addCookie(new Cookie("result1",Integer.toString(ruolo.compareTo("acquirente")) ));
                 resp.addCookie(new Cookie("result2",Integer.toString(ruolo.compareTo("negoziante")) ));
                 if (ruolo.equals("acquirente")){
-                    resp.sendRedirect(req.getContextPath()+"/HomeGestioneAcquirente.html");
+                    resp.sendRedirect(req.getContextPath()+pathAcquirente);
                 }
                 if (ruolo.equals("negoziante")){
-                    resp.sendRedirect(req.getContextPath()+"/HomeGestioneNegoziante.html");
+                    resp.sendRedirect(req.getContextPath()+pathNegoziante);
                 }
 
             }
@@ -67,7 +70,7 @@ public class LoginController extends HttpServlet implements ILogin{
                 //resp.sendRedirect(req.getContextPath()+"/index.jsp");
             }
         }else{
-            resp.sendRedirect(req.getContextPath()+"/HomeGestioneNegoziante.html");
+            resp.sendRedirect(req.getContextPath()+"/index.html");
         }
         
     }
