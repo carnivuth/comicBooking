@@ -39,10 +39,10 @@ public class MemoryUsersStoreController implements IUsersStore {
                 if(!u.isBloccato()){
                     if(usersPassword.get(u).equals(Password)){
                         if(u instanceof Acquirente){
-                            return "Acquirente";
+                            return "acquirente";
                         }
                         if(u instanceof Negoziante){
-                            return "Negoziante";
+                            return "negoziante";
                         }
                     }
 

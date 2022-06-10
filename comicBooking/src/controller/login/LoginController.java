@@ -50,11 +50,12 @@ public class LoginController extends HttpServlet implements ILogin{
 
                 Cookie cookie = new Cookie("username", u);
                 resp.addCookie(cookie);
-
-                if (ruolo.compareTo("acquirente")==0){
+                resp.addCookie(new Cookie("result1",Integer.toString(ruolo.compareTo("acquirente")) ));
+                resp.addCookie(new Cookie("result2",Integer.toString(ruolo.compareTo("negoziante")) ));
+                if (ruolo.equals("acquirente")){
                     resp.sendRedirect(req.getContextPath()+"/HomeGestioneAcquirente.html");
                 }
-                if (ruolo.compareTo("negoziante")==0){
+                if (ruolo.equals("negoziante")){
                     resp.sendRedirect(req.getContextPath()+"/HomeGestioneNegoziante.html");
                 }
 
@@ -66,7 +67,7 @@ public class LoginController extends HttpServlet implements ILogin{
                 //resp.sendRedirect(req.getContextPath()+"/index.jsp");
             }
         }else{
-            resp.getWriter().println("g.toJson(res)");
+            resp.sendRedirect(req.getContextPath()+"/HomeGestioneNegoziante.html");
         }
         
     }
