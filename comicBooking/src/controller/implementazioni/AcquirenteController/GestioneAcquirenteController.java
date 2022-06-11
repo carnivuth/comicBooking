@@ -13,6 +13,7 @@ import com.google.gson.Gson;
 import controller.datastore.*;
 import controller.interfacce.iAcquirente.IGestioneAcquirente;
 import controller.interfacce.iAcquirente.IPrenotaFumetto;
+import controller.interfacce.iAcquirente.IVisualizzaInteressi;
 import controller.interfacce.iAcquirente.IVisualizzaNotifiche;
 import controller.interfacce.iPercistance.IDataStore;
 import controller.interfacce.iPercistance.IDataStoreFactory;
@@ -51,6 +52,20 @@ public class GestioneAcquirenteController extends HttpServlet implements IGestio
                             Wrapper w= new Wrapper();
                             w.setResult(notifiche.getNotifiche(dataStore.getAcquirente(username)));
                             w.setOperazione("notifiche");
+                           
+                            resp.getWriter().println(g.toJson(w));
+                        }
+                       
+                        break;
+                    case "interessi":
+                        IVisualizzaInteressi interessi= new VisualizzaInteressiController();
+                        if(req.getSession().getAttribute("username")!=null){
+
+                            String username=(String) req.getSession().getAttribute("username"); 
+
+                            Wrapper w= new Wrapper();
+                            w.setResult(interessi.getInteressi(dataStore.getAcquirente(username)));
+                            w.setOperazione("interessi");
                            
                             resp.getWriter().println(g.toJson(w));
                         }
