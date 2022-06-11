@@ -28,4 +28,15 @@ public class Interessi{
         this.interessi.remove(i);
     }
 
+
+    @Override
+    public String toString() {
+        String a = "";
+        for(Interesse i : this.getInteressi()){
+            a += (i.toString() + "   " + i.getClass());
+            a+= System.lineSeparator();
+        }
+        return a;
+    }
+
 }

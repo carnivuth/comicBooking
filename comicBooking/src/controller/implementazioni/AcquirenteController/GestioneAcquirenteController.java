@@ -20,6 +20,7 @@ import controller.interfacce.iPercistance.IDataStoreFactory;
 import model.Wrapper;
 import model.fumetteria.Fumetteria;
 import model.fumetto.Fumetto;
+import model.interessi.Interessi;
 import model.user.Acquirente;
 
 public class GestioneAcquirenteController extends HttpServlet implements IGestioneAcquirente {
@@ -64,7 +65,10 @@ public class GestioneAcquirenteController extends HttpServlet implements IGestio
                             String username=(String) req.getSession().getAttribute("username"); 
 
                             Wrapper w= new Wrapper();
-                            w.setResult(interessi.getInteressi(dataStore.getAcquirente(username)));
+                            System.out.println(username);
+                            Interessi aaa = interessi.getInteressi(dataStore.getAcquirente(username));
+                            System.out.println(interessi.toString());
+                            w.setResult(aaa);
                             w.setOperazione("interessi");
                            
                             resp.getWriter().println(g.toJson(w));

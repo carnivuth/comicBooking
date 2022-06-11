@@ -19,10 +19,13 @@ function request_callback( theXhr, callback ) {
 
 	        	// operazione avvenuta con successo
 	
-		        if ( theXhr.responseText && theXhr.responseText !== "" ) {
+		        //if ( theXhr.responseText && theXhr.responseText !== "" ) {
 					
 					oggetto = JSON.parse(theXhr.responseText);
 					operazione = oggetto.operazione;
+					alert("ciao");
+					alert(operazione);
+					console.log(operazione);
 					
 					//acquirente
 					if (operazione === "notifiche"){
@@ -76,11 +79,11 @@ function request_callback( theXhr, callback ) {
 
 					
 					//callback.innerHTML=JSON.parse(theXhr.responseText);
-                }
+               // }
 	
-				else {
+				/*else {
 			    	// non faccio niente
-				}
+				}*/
 
 	        }
 

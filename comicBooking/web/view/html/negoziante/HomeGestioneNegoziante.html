@@ -20,7 +20,11 @@
           <div class="column is-8 is-offset-2">
             <div class="box">
               <img src="../../media/comic1.png" width="50">
-              <p class="subtitle is-4">Ciao Negoziante1!</p>
+              <div id="username">
+                <script> 
+                  document.getElementById("username").innerHTML = ("Ciao " + getUsername() + "!");
+                </script>
+            </div>
               
              
                 <!--button class="button is-block is-info is-large is-fullwidth is-rounded is-outlined">Gestione biblioteca</button> <br /> 

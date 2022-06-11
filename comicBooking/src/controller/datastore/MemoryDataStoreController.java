@@ -32,7 +32,9 @@ public class MemoryDataStoreController implements IDataStore {
     public Acquirente getAcquirente(String username) {
         
         for(Acquirente a:this.acquirenti){
-            if(a.getUsername().equals(username))return a;
+            if(a.getUsername().equals(username)){
+                return a;
+            }
         }
         return null;
     }
