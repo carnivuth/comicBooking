@@ -4,7 +4,7 @@ import java.io.FileWriter;
 
 public class Logger {
 
-    private String file = "./log.txt"/*"/home/luca/Desktop/log.txt"*/;
+    private String file = "log.txt"/*"/home/luca/Desktop/log.txt"*/;
     
 
     public Logger(){

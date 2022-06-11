@@ -70,8 +70,8 @@ public class GestioneAcquirenteController extends HttpServlet implements IGestio
                             Interessi aaa = interessi.getInteressi(dataStore.getAcquirente(username));
                             System.out.println(interessi.toString());
                             w.setResult(aaa);
-                            Logger l = new Logger();
-                            l.scrivi(aaa.toString());
+                            /*Logger l = new Logger();
+                            l.scrivi(aaa.toString());*/
 
                             w.setOperazione("interessi");
                            
