@@ -47,5 +47,9 @@ function gotoVisualizzaNotifiche(){
 }
 
 function gotoGestioneCatalogo() {
-    window.location.href = uriHtmlNegoziante + "";
+    window.location.href = uriHtmlNegoziante + "GestioneCatalogo.html";
+}
+
+function gotoVisualizzaPrenotazioni(){
+    window.location.href = uriHtmlNegoziante + "visualizzaprenotazioni.html";
 }
