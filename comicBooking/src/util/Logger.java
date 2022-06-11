@@ -4,7 +4,7 @@ import java.io.FileWriter;
 
 public class Logger {
 
-    private String file = "comicBooking/src/util/log.txt";
+    private String file = "./log.txt"/*"/home/luca/Desktop/log.txt"*/;
     
 
     public Logger(){
@@ -16,8 +16,8 @@ public class Logger {
 
         try{
             log = new FileWriter(file);
-            log.write(x);
-            log.write(System.lineSeparator());
+            log.append(x);
+            log.append(System.lineSeparator());
             log.flush();
             log.close();
         }catch(Exception e){}

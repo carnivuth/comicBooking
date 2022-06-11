@@ -35,7 +35,7 @@ function request_callback( theXhr, callback ) {
 				    	printBiblioteca(oggetto.result, theXhr.responseText);
 					}
 					if (operazione === "interessi"){
-				    	printInteressi(oggetto.result, theXhr.responseText);
+				    	printInteressi(theXhr.responseText, oggetto.result);
 					}
 
 					// prenotazione

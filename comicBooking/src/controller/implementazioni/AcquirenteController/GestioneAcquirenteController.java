@@ -22,6 +22,7 @@ import model.fumetteria.Fumetteria;
 import model.fumetto.Fumetto;
 import model.interessi.Interessi;
 import model.user.Acquirente;
+import util.Logger;
 
 public class GestioneAcquirenteController extends HttpServlet implements IGestioneAcquirente {
 
@@ -69,6 +70,9 @@ public class GestioneAcquirenteController extends HttpServlet implements IGestio
                             Interessi aaa = interessi.getInteressi(dataStore.getAcquirente(username));
                             System.out.println(interessi.toString());
                             w.setResult(aaa);
+                            Logger l = new Logger();
+                            l.scrivi(aaa.toString());
+
                             w.setOperazione("interessi");
                            
                             resp.getWriter().println(g.toJson(w));

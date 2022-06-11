@@ -50,7 +50,7 @@ public class LoginController extends HttpServlet implements ILogin{
             String ruolo = this.verificaCredenziali(u, p);
 
             if (ruolo.compareTo("false")!=0){
-
+                req.getSession().setAttribute("username", u);
                 Cookie cookie = new Cookie("username", u);
                 resp.addCookie(cookie);
                 resp.addCookie(new Cookie("result1",Integer.toString(ruolo.compareTo("acquirente")) ));

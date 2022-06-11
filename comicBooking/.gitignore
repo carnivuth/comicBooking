@@ -6,3 +6,5 @@ environment.properties
 /comicBooking/ant/environment.properties
 ant/environment.properties
 ~/fumetto/comicBooking/comicBooking/ant/environment.properties
+
+log.txt
