@@ -36,7 +36,7 @@
                         <div class="container has-text-centered">
                             <div class="column is-4 is-offset-4">
                                 <div class="box">
-                                    <img src="./media/comic1.png" width="50">
+                                    <img src="../../media/comic1.png" width="50">
                                     <p class="subtitle is-4">Accedi per poter iniziare!</p>
 
                                     <form name="loginForm" method="post" action="../../../login">

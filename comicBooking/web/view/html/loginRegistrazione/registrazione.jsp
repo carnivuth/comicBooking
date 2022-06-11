@@ -25,7 +25,7 @@
                         <div class="container has-text-centered">
                             <div class="column is-4 is-offset-4">
                                 <div class="box">
-                                    <img src="./media/comic1.png" width="50">
+                                    <img src="../../media/comic1.png" width="50">
                                     <p class="subtitle is-4">Registrati prima di continuare!</p>
 
                                     <form name="register" method="post" action="Login?req=registration">

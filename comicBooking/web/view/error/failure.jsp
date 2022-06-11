@@ -11,9 +11,7 @@
 
 <body>
 
-	<%@ include file="../fragments/header.jsp" %>
-	<%@ include file="../fragments/menu.jsp" %>
-
+	
 	<div id="err" class="clear">
 		<p>
 			<b>An exception was raised!</b><br/>
@@ -35,7 +33,6 @@
 
 	</div>
 
-	<%@ include file="../fragments/footer.jsp" %>
 
 </body>
 </html>

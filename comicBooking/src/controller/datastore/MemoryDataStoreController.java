@@ -9,6 +9,8 @@ import model.fumetteria.Catalogo;
 import model.fumetteria.Fumetteria;
 import model.fumetto.Fumetto;
 import model.fumetto.Serie;
+import model.interessi.Interessi;
+import model.notifiche.Notifica;
 import model.user.Acquirente;
 import model.user.Negoziante;
 
@@ -133,6 +135,7 @@ public class MemoryDataStoreController implements IDataStore {
         b1.setFumetti(fumettiA);
         u1.setBiblioteca(b1);
         u1.setUsername("pippo");
+        u1.setNotifiche(new ArrayList<Notifica>());
 
         
 
@@ -142,7 +145,10 @@ public class MemoryDataStoreController implements IDataStore {
         f1.setCitta("bologna");
         f1.setIndirizzo("indirizzo");
         f1.setNome("nome");
-        u1.getInteressi().aggiungiInteresse(f1);
+        Interessi inter = new Interessi();
+        inter.aggiungiInteresse(f1);
+        u1.setInteressi(inter);
+        //u1.getInteressi().aggiungiInteresse(f1);
         Catalogo c1=new Catalogo();
         List<Fumetto> fumettiN=new ArrayList<Fumetto>();
 
