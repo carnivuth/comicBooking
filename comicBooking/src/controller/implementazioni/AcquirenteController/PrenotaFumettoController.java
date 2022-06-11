@@ -4,10 +4,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import controller.datastore.JsonDataStoreControllerFactory;
 import controller.interfacce.iAcquirente.IPrenotaFumetto;
-import controller.interfacce.iPercistance.IDataStore;
-import controller.interfacce.iPercistance.IDataStoreFactory;
 import model.fumetteria.Fumetteria;
 import model.fumetteria.NumeroCopie;
 import model.fumetto.Fumetto;
