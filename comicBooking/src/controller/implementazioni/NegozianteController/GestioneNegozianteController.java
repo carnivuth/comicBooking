@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 
-import controller.datastore.DataStoreControllerFactory;
+import controller.datastore.MemoryDataStoreControllerFactory;
 import controller.interfacce.iNegoziante.IGestioneCatalogo;
 import controller.interfacce.iNegoziante.IGestioneNegoziante;
 import controller.interfacce.iNegoziante.IPrenotazione;
@@ -26,7 +26,7 @@ public class GestioneNegozianteController extends HttpServlet implements IGestio
     public void init(ServletConfig conf) throws ServletException {
 
         super.init(conf);
-        IDataStoreFactory factory = new DataStoreControllerFactory();
+        IDataStoreFactory factory = new MemoryDataStoreControllerFactory();
          dataStore= factory.createInstance();
         
     }

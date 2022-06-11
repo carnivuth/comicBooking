@@ -28,7 +28,7 @@ public class GestioneAcquirenteController extends HttpServlet implements IGestio
     public void init(ServletConfig conf) throws ServletException {
 
         super.init(conf);
-        IDataStoreFactory factory = new DataStoreControllerFactory();
+        IDataStoreFactory factory = new MemoryDataStoreControllerFactory();
          dataStore= factory.createInstance();
         
     }

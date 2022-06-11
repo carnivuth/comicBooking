@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import controller.datastore.DataStoreControllerFactory;
+import controller.datastore.JsonDataStoreControllerFactory;
 import controller.interfacce.iAcquirente.IPrenotaFumetto;
 import controller.interfacce.iPercistance.IDataStore;
 import controller.interfacce.iPercistance.IDataStoreFactory;
@@ -46,10 +46,7 @@ public class PrenotaFumettoController implements IPrenotaFumetto{
     public List<Fumetteria> getFumetterie(Fumetto f) {
         
         List<Fumetteria>fumetterie=new ArrayList<Fumetteria>();
-
-        IDataStoreFactory factory = new DataStoreControllerFactory();
-        IDataStore dataStore= factory.createInstance();
-        List<Negoziante> list=dataStore.getNegozianti();
+        List<Negoziante> list=GestioneAcquirenteController.dataStore.getNegozianti();
        
         for(Negoziante n:list){
             int count=0;

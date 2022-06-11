@@ -1,13 +1,9 @@
-package util;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+package controller.datastore;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import com.google.gson.Gson;
-
+import controller.interfacce.iPercistance.IDataStore;
 import model.biblioteca.Biblioteca;
 import model.fumetteria.Catalogo;
 import model.fumetteria.Fumetteria;
@@ -16,9 +12,81 @@ import model.fumetto.Serie;
 import model.user.Acquirente;
 import model.user.Negoziante;
 
+public class MemoryDataStoreController implements IDataStore {
 
-public class JsonMaker {
-    public static void main(String args[]){
+    private List<Acquirente> acquirenti;
+    private List<Negoziante> negozianti;
+    private List<Fumetto> fumetti;
+
+    public MemoryDataStoreController(){
+        acquirenti=new ArrayList<Acquirente>();
+        negozianti=new ArrayList<Negoziante>();
+        init();
+    }
+
+   
+
+    @Override
+    public Acquirente getAcquirente(String username) {
+        
+        for(Acquirente a:this.acquirenti){
+            if(a.getUsername().equals(username))return a;
+        }
+        return null;
+    }
+
+    @Override
+    public Negoziante getNegoziante(String username) {
+        for(Negoziante n:this.negozianti){
+            if(n.getUsername().equals(username))return n;
+        }
+        return null;
+    }
+
+    @Override
+    public List<Negoziante> getNegozianti() {
+       
+        return negozianti;
+    }
+
+    @Override
+    public List<Acquirente> getAcquirenti() {
+       
+        return acquirenti;
+    }
+
+    @Override
+    public void setAcquirente(Acquirente a) {
+       
+        for(Acquirente a1:this.acquirenti){
+            if(a1.getUsername().equals(a.getUsername())){
+                a1=a;
+                return;
+            }
+        }
+        this.acquirenti.add(a);
+        
+    }
+
+    @Override
+    public void setNegoziante(Negoziante n) {
+        
+        for(Negoziante n1:this.negozianti){
+            if(n1.getUsername().equals(n.getUsername())){
+                n1=n;
+                return;
+            }
+        }
+        this.negozianti.add(n);
+        
+    }
+
+    @Override
+    public List<Fumetto> getFumetti() {
+        
+        return this.fumetti;
+    }
+    private void init(){
         Acquirente u1=new Acquirente();
         Biblioteca b1 =new Biblioteca();
         List<Fumetto> fumettiA=new ArrayList<Fumetto>();
@@ -103,41 +171,14 @@ public class JsonMaker {
         f.setCasaEditrice("provacasaEditrice");
         fumettiN.add(f);
         fumetti.add(f);
-        
-
-        
-
+  
         c1.setFumetti(fumettiN);
 
-        //salvataggio in file json
-        Gson g=new Gson();
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(new File("./dbcomixacquirente.json")))) {
+        this.acquirenti.add(u1);
+        this.negozianti.add(n1);
+        this.fumetti=fumetti;
 
-            writer.write(g.toJson(u1));
-        } catch (IOException e) {
-  
-            e.printStackTrace();
-        }
-
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(new File("./dbcomixnegoziante.json")))) {
-
-            writer.write(g.toJson(n1));
-        } catch (IOException e) {
-           
-            e.printStackTrace();
-        }
-
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(new File("./dbcomixfuemtti.json")))) {
-
-            writer.write(g.toJson(fumetti));
-        } catch (IOException e) {
-           
-            e.printStackTrace();
-        }
-        System.out.println("fatto");
-  
-         
-
+        
 
     }
 }
