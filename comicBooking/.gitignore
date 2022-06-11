@@ -1,4 +1,7 @@
 /bin
 /build
+/C:
 
 environment.properties
+/comicBooking/ant/environment.properties
+~/fumetto/comicBooking/comicBooking/ant/environment.properties
