@@ -3,12 +3,12 @@ uriServer = "http://localhost:8080/" + nameProject + "/";
 uriServerNegoziante = uriServer + "negoziante";
 uriServerAcquirente = uriServer + "acquirente";
 uriRegistrazione = uriServer + "registrazione.jsp";
-uriHomeNegoziante = uriServer + "HomeGestioneNegoziante.html";
-uriHomeAcquirente = uriServer + "HomeGestioneAcquirente.html";
+
 
 uriHtmlNegoziante = uriServer + "view/html/" + "negoziante/";
 uriHtmlAcquirente = uriServer + "view/html/" + "acquirente/";
-
+uriHomeNegoziante = uriHtmlNegoziante + "HomeGestioneNegoziante.html";
+uriHomeAcquirente = uriHtmlAcquirente + "HomeGestioneAcquirente.html";
 tab = "\t";
 
 
