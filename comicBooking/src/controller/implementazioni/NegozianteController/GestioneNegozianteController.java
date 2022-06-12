@@ -137,5 +137,11 @@ public class GestioneNegozianteController extends HttpServlet implements IGestio
         
         return null;
     }
+
+    @Override
+protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    
+    doGet(req,resp);
+}
     
 }
