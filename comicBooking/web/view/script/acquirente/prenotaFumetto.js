@@ -2,8 +2,8 @@ function richiediFumettiPerPrenotazione(){
     request(uriServerAcquirente + "?operazione=fumettiPerPrenotazione", myGetElementById("fumettiPerPrenotazione"));
 }
 
-fumetti
-jsonFumetto
+fumetti = "";
+jsonFumetto = "";
 
 function stampaFumettiPerPrenotazione(callback, result){
 
@@ -16,7 +16,7 @@ function stampaFumettiPerPrenotazione(callback, result){
         
         callback.innerHTML += (f.titolo + tab + f.numero + tab);
         callback.innerHTML += "<button type=\"button\" value=\"" + i + "\" onclick=\"richiediFumetteriaPerPrenotazione(this.value)\">Seleziona</button> ";
-        callback.innerHTML += "<br";
+        callback.innerHTML += "<br>";
     }
 }
 
@@ -27,8 +27,8 @@ function richiediFumetteriaPerPrenotazione(numeroFumetto){
     request(uriServerAcquirente + "?operazione=fumetteriePerPrenotazione&fumetto="+jsonFumetto, myGetElementById("fumettiPerPrenotazione"));
 }
 
-fumetterie
-jsonFumetteria
+fumetterie = "";
+jsonFumetteria = "";
 
 function stampaFumetteriePerPrenotazione(callback, result){
     
