@@ -144,16 +144,10 @@ public class GestioneAcquirenteController extends HttpServlet implements IGestio
 
 @Override
 protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-    Enumeration e=req.getAttributeNames();
-    while (e.hasMoreElements())System.out.println("Value is: " + e.nextElement());
-    e=req.getParameterNames();
-    while (e.hasMoreElements())System.out.println("Value is: " + e.nextElement());
-    
     
     Gson g= new Gson();
+
     String operazione=req.getParameter("operazione");
- 
     switch (operazione) {
         case "biblioteca":
             
@@ -201,9 +195,9 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 
         case "fumetteriePerPrenotazione":
             IPrenotaFumetto prenota2= new PrenotaFumettoController();
-            String gFumetto=(String) req.getAttribute("fumetto");
+            String gFumetto=(String) req.getParameter("fumetto");
 
-            e=req.getAttributeNames();
+            Enumeration e=req.getAttributeNames();
             while (e.hasMoreElements())System.out.println("Value is: " + e.nextElement());
             e=req.getParameterNames();
             while (e.hasMoreElements())System.out.println("Value is: " + e.nextElement());
@@ -225,9 +219,9 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
             String acquirente=(String) req.getSession().getAttribute("username"); 
             Acquirente a= dataStore.getAcquirente(acquirente);
 
-            String gsonFumetto=(String) req.getAttribute("fumetto"); 
+            String gsonFumetto=(String) req.getParameter("fumetto"); 
             Fumetto fumetto= g.fromJson(gsonFumetto, Fumetto.class);
-            String gFumetteria=(String) req.getAttribute("fumetteria"); 
+            String gFumetteria=(String) req.getParameter("fumetteria"); 
             Fumetteria fumetteria= g.fromJson(gFumetteria, Fumetteria.class);
             Wrapper w2= new Wrapper();
 
