@@ -22,7 +22,7 @@ import model.fumetteria.Fumetteria;
 import model.fumetto.Fumetto;
 import model.interessi.Interessi;
 import model.user.Acquirente;
-import util.Logger;
+
 
 public class GestioneAcquirenteController extends HttpServlet implements IGestioneAcquirente {
 
@@ -35,6 +35,7 @@ public class GestioneAcquirenteController extends HttpServlet implements IGestio
          dataStore= factory.createInstance();
         
     }
+    
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException, NumberFormatException {
@@ -70,8 +71,6 @@ public class GestioneAcquirenteController extends HttpServlet implements IGestio
                             Interessi aaa = interessi.getInteressi(dataStore.getAcquirente(username));
                             System.out.println(interessi.toString());
                             w.setResult(aaa);
-                            /*Logger l = new Logger();
-                            l.scrivi(aaa.toString());*/
 
                             w.setOperazione("interessi");
                            
@@ -124,6 +123,7 @@ public class GestioneAcquirenteController extends HttpServlet implements IGestio
                 }
                 
     }
+    
 
 
   @Override
@@ -132,6 +132,13 @@ public class GestioneAcquirenteController extends HttpServlet implements IGestio
 
         return null;
     }
+
+
+@Override
+protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    
+    doGet(req,resp);
+}
 
    
 }
