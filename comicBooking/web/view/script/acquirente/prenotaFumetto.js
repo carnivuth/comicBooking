@@ -9,7 +9,7 @@ function stampaFumettiPerPrenotazione(callback, result){
 
     fumetti = result;
 
-    callback.innerHTML += ("Titolo" + tab + "Numero" + tab + "Conferma" + "<br>")
+    callback.innerHTML = ("Titolo" + tab + "Numero" + tab + "Conferma" + "<br>")
 
     for (var i=0; i<result.length; i++){
         f = result[i];
@@ -38,7 +38,7 @@ function stampaFumetteriePerPrenotazione(callback, result){
     
     fumetterie = result;
     
-    callback.innerHTML += ("Nome" + tab + "Citta" + tab + "Indirizzo" + "<br>");
+    callback.innerHTML = ("Nome" + tab + "Citta" + tab + "Indirizzo" + "<br>");
 
     for (var i=0; i<result.length; i++){
         f = result[i];
@@ -60,6 +60,7 @@ function richiediPrenotazione(numeroFumetteria){
     params = [];
     params[0] = jsonFumetto;
     params[1] = jsonFumetteria;
+    alert(jsonFumetteria);
 
     request(uriServerAcquirente + "?operazione=richiediPrenotazione", myGetElementById("fumettiPerPrenotazione"), "post", paramsName, params);
 
