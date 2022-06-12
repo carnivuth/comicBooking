@@ -136,8 +136,8 @@ function requestAJAX(theUri, theXhr, callback, method, paramsName, params) {
 		theXhr.send(null);
 	}
 	if (method === "post"){
-		theXhr.open("post", uri, true);
-		theXhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+		theXhr.open("post", theUri, true);
+		//theXhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 		theXhr.setRequestHeader("connection", "close");
 
 		text = "";

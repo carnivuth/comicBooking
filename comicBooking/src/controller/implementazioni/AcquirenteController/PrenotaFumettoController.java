@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import controller.interfacce.iAcquirente.IPrenotaFumetto;
+import model.fumetteria.Catalogo;
 import model.fumetteria.Fumetteria;
 import model.fumetteria.NumeroCopie;
 import model.fumetto.Fumetto;
@@ -19,8 +20,8 @@ public class PrenotaFumettoController implements IPrenotaFumetto{
         
         Prenotazione p=new Prenotazione();
         p.setAcquirente(a);
-
-        List<NumeroCopie> listCopie=f.getCatalogo().getNumeroCopie();
+        Catalogo cat = f.getCatalogo();
+        List<NumeroCopie> listCopie = cat.getNumeroCopie();
         List<Prenotazione> prenotazioni=a.getPrenotazioni();
 
         for(NumeroCopie n:listCopie){

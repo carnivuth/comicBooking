@@ -102,6 +102,7 @@ public class MemoryDataStoreController implements IDataStore {
         
         Fumetto f =new Fumetto();
         f.setSerie(s);
+        f.setTitolo("titolo1");
         f.setNumero(1);
         f.setDescrizione("descrizione 1");
         f.setCasaEditrice("provacasaEditrice");
@@ -110,6 +111,7 @@ public class MemoryDataStoreController implements IDataStore {
 
         //creazione fumetti acquirente
          f =new Fumetto();
+         f.setTitolo("titolo2");
         f.setSerie(s);
         f.setNumero(2);
         f.setDescrizione("descrizione 2");
@@ -120,6 +122,7 @@ public class MemoryDataStoreController implements IDataStore {
         
          f =new Fumetto();
         f.setSerie(s);
+        f.setTitolo("titolo3");
         f.setNumero(3);
         f.setDescrizione("descrizione 3");
         f.setCasaEditrice("provacasaEditrice");
@@ -127,6 +130,7 @@ public class MemoryDataStoreController implements IDataStore {
         fumetti.add(f);
 
         f =new Fumetto();
+        f.setTitolo("titolo4");
         f.setSerie(s);
         f.setNumero(4);
         f.setDescrizione("descrizione 4");
@@ -158,6 +162,7 @@ public class MemoryDataStoreController implements IDataStore {
         f =new Fumetto();
         f.setSerie(s);
         f.setNumero(5);
+        f.setTitolo("titolo5");
         f.setDescrizione("descrizione 5");
         f.setCasaEditrice("provacasaEditrice");
         fumettiN.add(f);
@@ -166,6 +171,7 @@ public class MemoryDataStoreController implements IDataStore {
         
          f =new Fumetto();
         f.setSerie(s);
+        f.setTitolo("titolo6");
         f.setNumero(6);
         f.setDescrizione("descrizione 6");
         f.setCasaEditrice("provacasaEditrice");
@@ -175,12 +181,16 @@ public class MemoryDataStoreController implements IDataStore {
         f =new Fumetto();
         f.setSerie(s);
         f.setNumero(7);
+        f.setTitolo("titolo7");
         f.setDescrizione("descrizione 7");
         f.setCasaEditrice("provacasaEditrice");
         fumettiN.add(f);
         fumetti.add(f);
   
         c1.setFumetti(fumettiN);
+        f1.setCatalogo(c1);
+        n1.setFumetteria(f1);
+        
 
         this.acquirenti.add(u1);
         this.negozianti.add(n1);
