@@ -1,5 +1,5 @@
 function richiediFumettiPerPrenotazione(){
-    request(uriServerAcquirente + "?operazione=fumettiPerPrenotazione", myGetElementById("fumettiPerPrenotazione"));
+    request(uriServerAcquirente + "?operazione=fumettiPerPrenotazione", myGetElementById("fumettiPerPrenotazione"), "get");
 }
 
 fumetti = "";
@@ -24,7 +24,11 @@ function richiediFumetteriaPerPrenotazione(numeroFumetto){
     numeroFumetto = parseInt(numeroFumetto);
     f = fumetti[numeroFumetto];
     jsonFumetto = JSON.stringify(f);
-    request(uriServerAcquirente + "?operazione=fumetteriePerPrenotazione&fumetto="+jsonFumetto, myGetElementById("fumettiPerPrenotazione"));
+    paramsName = [];
+    paramsName[0] = "fumetto";
+    params = [];
+    params[0] = jsonFumetto;
+    request(uriServerAcquirente + "?operazione=fumetteriePerPrenotazione", myGetElementById("fumettiPerPrenotazione"), "post", paramsName, params);
 }
 
 fumetterie = "";
@@ -50,7 +54,14 @@ function richiediPrenotazione(numeroFumetteria){
     f = fumetterie[numeroFumetteria];
     jsonFumetteria = JSON.stringify(f);
 
-    request(uriServerAcquirente + "?operazione=richiediPrenotazione&fumetto=" + jsonFumetto + "&fumetteria" + jsonFumetteria, myGetElementById("fumettiPerPrenotazione"));
+    paramsName = [];
+    paramsName[0] = "fumetto";
+    paramsName[1] = "fumetteria";
+    params = [];
+    params[0] = jsonFumetto;
+    params[1] = jsonFumetteria;
+
+    request(uriServerAcquirente + "?operazione=richiediPrenotazione", myGetElementById("fumettiPerPrenotazione"), "post", paramsName, params);
 
 }
 

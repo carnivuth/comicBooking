@@ -32,5 +32,5 @@ function printInteressi(callback, result){
 }
 
 function richiediInteressi(){
-    request(uriServerAcquirente + "?operazione=interessi", myGetElementById("interessi"));
+    request(uriServerAcquirente + "?operazione=interessi", myGetElementById("interessi"), "get");
 }

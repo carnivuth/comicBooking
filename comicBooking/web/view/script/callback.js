@@ -116,25 +116,47 @@ function requestIframe(theUri,theHolder) {
  * all'interno dell'elemento theHolder del DOM
  * Usa tecniche AJAX attrverso la XmlHttpRequest fornita in theXhr
  */
-function requestAJAX(theUri, theXhr, callback) {
+function requestAJAX(theUri, theXhr, callback, method, paramsName, params) {
     
 	// impostazione controllo e stato della richiesta
 	theXhr.onreadystatechange = function() { request_callback(theXhr, callback); };
+	if (method === "get"){
+		// impostazione richiesta asincrona in GET
+		// del file specificato
+		try {
+			theXhr.open("get", theUri, true);
+			//theXhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		}
+		catch(e) {
+			// Exceptions are raised when trying to access cross-domain URIs 
+			alert(e);
+		}
 
-	// impostazione richiesta asincrona in GET
-	// del file specificato
-	try {
-		theXhr.open("get", theUri, true);
-		//theXhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		// invio richiesta
+		theXhr.send(null);
 	}
-	catch(e) {
-		// Exceptions are raised when trying to access cross-domain URIs 
-		alert(e);
+	if (method === "post"){
+		theXhr.open("post", uri, true);
+		theXhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+		theXhr.setRequestHeader("connection", "close");
+
+		text = "";
+
+		if (params.length != paramsName.length) {
+			alert("params and relative names have differnet length");
+		}
+		else{
+
+			for (var i = 0; i < params.length; i++){
+				text += paramsName[i] + "=" + params[i];
+				if (i + 1 != params.length){
+					text += "&";
+				}
+			}	
+		}
+
+		theXhr.send(text);
 	}
-
-	// invio richiesta
-	theXhr.send(null);
-
 } // requestRandomIntGenerationAJAX()
 
 
@@ -144,13 +166,13 @@ function requestAJAX(theUri, theXhr, callback) {
  * e lo aggiunge al contenuto dell'elemento e del dom
  * Gestisce sia AJAX che il mancato supporto ad AJAX 
  */
-function request(uri,callback) {
+function request(uri,callback,method, paramsName,params) {
 
 	// assegnazione oggetto XMLHttpRequest
 	var xhr = myGetXmlHttpRequest();
 
 	if ( xhr ) 
-		requestAJAX(uri,xhr, callback); 
+		requestAJAX(uri,xhr, callback, method, paramsName, params); 
 	else 
 		requestIframe(uri,callback); 
 
