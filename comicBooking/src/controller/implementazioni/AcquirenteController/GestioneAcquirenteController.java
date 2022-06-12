@@ -144,9 +144,16 @@ public class GestioneAcquirenteController extends HttpServlet implements IGestio
 
 @Override
 protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+    Enumeration e=req.getAttributeNames();
+    while (e.hasMoreElements())System.out.println("Value is: " + e.nextElement());
+    e=req.getParameterNames();
+    while (e.hasMoreElements())System.out.println("Value is: " + e.nextElement());
+    
     
     Gson g= new Gson();
     String operazione=req.getParameter("operazione");
+ 
     switch (operazione) {
         case "biblioteca":
             
@@ -196,7 +203,7 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
             IPrenotaFumetto prenota2= new PrenotaFumettoController();
             String gFumetto=(String) req.getAttribute("fumetto");
 
-            Enumeration e=req.getAttributeNames();
+            e=req.getAttributeNames();
             while (e.hasMoreElements())System.out.println("Value is: " + e.nextElement());
             e=req.getParameterNames();
             while (e.hasMoreElements())System.out.println("Value is: " + e.nextElement());
