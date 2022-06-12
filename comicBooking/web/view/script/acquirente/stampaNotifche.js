@@ -26,5 +26,5 @@ function segnaComeLetto(){
 }
 
 function richiediNotifiche(){
-    request(uriServerAcquirente + "?operazione=notifiche", myGetElementById("notifiche"));
+    request(uriServerAcquirente + "?operazione=notifiche", myGetElementById("notifiche"), "get");
 }

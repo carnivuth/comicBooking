@@ -16,5 +16,5 @@ function printBiblioteca(callback, result){
 }
 
 function richiediBiblioteca(){
-    request(uriServerAcquirente + "?operazione=biblioteca", myGetElementById("biblioteca"));
+    request(uriServerAcquirente + "?operazione=biblioteca", myGetElementById("biblioteca"), "get");
 }
