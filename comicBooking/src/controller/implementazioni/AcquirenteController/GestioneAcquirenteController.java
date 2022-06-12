@@ -210,7 +210,7 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
             w1.setOperazione("fumetteriePerPrenotazione");
             resp.getWriter().println(g.toJson(w1));
 
-            break;  
+            break;
 
         case "richiediPrenotazione":
 
