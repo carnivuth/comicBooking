@@ -25,10 +25,12 @@ function richiediFumetteriaPerPrenotazione(numeroFumetto){
     f = fumetti[numeroFumetto];
     jsonFumetto = JSON.stringify(f);
     paramsName = [];
-    paramsName[0] = "fumetto";
+    paramsName[0] = "operazione";
+    paramsName[1] = "fumetto";
     params = [];
-    params[0] = jsonFumetto;
-    request(uriServerAcquirente + "?operazione=fumetteriePerPrenotazione", myGetElementById("fumetteriePerPrenotazione"), "post", paramsName, params);
+    params[0] = "fumetteriePerPrenotazione";
+    params[1] = jsonFumetto;
+    request(uriServerAcquirente, myGetElementById("fumetteriePerPrenotazione"), "post", paramsName, params);
 }
 
 fumetterie = "";
@@ -55,14 +57,16 @@ function richiediPrenotazione(numeroFumetteria){
     jsonFumetteria = JSON.stringify(f);
 
     paramsName = [];
-    paramsName[0] = "fumetto";
-    paramsName[1] = "fumetteria";
+    paramsName[0] = "operazione";
+    paramsName[1] = "fumetto";
+    paramsName[2] = "fumetteria";
     params = [];
-    params[0] = jsonFumetto;
-    params[1] = jsonFumetteria;
+    params[0] = "richiediPrenotazione";
+    params[1] = jsonFumetto;
+    params[2] = jsonFumetteria;
     alert(jsonFumetteria);
 
-    request(uriServerAcquirente + "?operazione=richiediPrenotazione", myGetElementById("fumettiPerPrenotazione"), "post", paramsName, params);
+    request(uriServerAcquirente, myGetElementById("fumettiPerPrenotazione"), "post", paramsName, params);
 
 }
 
