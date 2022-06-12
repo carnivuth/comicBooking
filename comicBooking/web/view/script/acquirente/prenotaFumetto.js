@@ -28,7 +28,7 @@ function richiediFumetteriaPerPrenotazione(numeroFumetto){
     paramsName[0] = "fumetto";
     params = [];
     params[0] = jsonFumetto;
-    request(uriServerAcquirente + "?operazione=fumetteriePerPrenotazione", myGetElementById("fumettiPerPrenotazione"), "post", paramsName, params);
+    request(uriServerAcquirente + "?operazione=fumetteriePerPrenotazione", myGetElementById("fumetteriePerPrenotazione"), "post", paramsName, params);
 }
 
 fumetterie = "";
