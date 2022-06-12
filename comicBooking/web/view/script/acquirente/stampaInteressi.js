@@ -2,14 +2,16 @@ function printInteressi(callback, result){
 
     zzzzzz = result.interessi;
     callback.innerHTML = "Tipologia" + tab + "Nome" + "<br>";
-    callback.innerHTML += zzzzzz;
+    //callback.innerHTML += zzzzzz;
+    alert(zzzzzz.length);
 
-
-    /*for (var i=0; i<zzzzzz.size; i++) {
+    for (var i=0; i<zzzzzz.length; i++) {
         f = zzzzzz[i];
-        classe = f.constructor.name;
+        //classe = f.constructor.name;
+        //alert(f.constructor);
+        //alert(f.constructor.name);
 
-        callback.innerHTML += classe;
+        /*callback.innerHTML += classe;
         if (classe==="Serie"){
             callback.innerHTML += f.tipo;
         }
@@ -18,10 +20,15 @@ function printInteressi(callback, result){
         }
         if (classe==="Serie"){
             callback.innerHTML += f.titolo;
+        }*/
+
+        text = "";
+        for (const x in f) {
+            text += f[x] + ", ";
         }
  
-        callback.innerHTML += '<br>'
-     }*/
+        callback.innerHTML += text + "<br>";
+     }
 }
 
 function richiediInteressi(){

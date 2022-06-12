@@ -23,57 +23,57 @@ function request_callback( theXhr, callback ) {
 					
 					oggetto = JSON.parse(theXhr.responseText);
 					operazione = oggetto.operazione;
-					alert("ciao");
-					alert(operazione);
+					//alert("ciao");
+					//alert(operazione);
 					console.log(operazione);
 					
 					//acquirente
 					if (operazione === "notifiche"){
-				    	printNotifiche(oggetto.result, theXhr.responseText);
+				    	printNotifiche(callback, oggetto.result);
 					}
 					if (operazione === "biblioteca"){
-				    	printBiblioteca(oggetto.result, theXhr.responseText);
+				    	printBiblioteca(callback, oggetto.result);
 					}
 					if (operazione === "interessi"){
-				    	printInteressi(theXhr.responseText, oggetto.result);
+				    	printInteressi(callback, oggetto.result);
 					}
 
 					// prenotazione
 					if (operazione === "fumettiPerPrenotazione"){
-				    	stampaFumettiPerPrenotazione(oggetto.result, theXhr.responseText);
+				    	stampaFumettiPerPrenotazione(callback, oggetto.result);
 					}
 					if (operazione === "fumetteriePerPrenotazione"){
-				    	stampaFumetteriePerPrenotazione(oggetto.result, theXhr.responseText);
+				    	stampaFumetteriePerPrenotazione(callback, oggetto.result);
 					}
 					if (operazione === "richiediPrenotazione"){
-				    	risultatoPrenotazione(oggetto.result, theXhr.responseText);
+				    	risultatoPrenotazione(callback, oggetto.result);
 					}
 
 					
 					//negoziante
 					if (operazione === "catalogo"){
-				    	printCatalogo(oggetto.result, theXhr.responseText);
+				    	printCatalogo(callback, oggetto.result);
 					}
 					if (operazione === "changePrenotabile"){
-				    	printCatalogo(oggetto.result, theXhr.responseText);
+				    	printCatalogo(callback, oggetto.result);
 					}
 					if (operazione === "aggiungiFumettoCatalogo"){
-				    	printCatalogo(oggetto.result, theXhr.responseText);
+				    	printCatalogo(callback, oggetto.result);
 						val = confirm("Scatenare evento?");
 						if (val == true) {
 							scatenaEvento();
 						}
 					}
 					if (operazione === "rimuoviFumettoCatalogo"){
-				    	printCatalogo(oggetto.result, theXhr.responseText);
+				    	printCatalogo(callback, oggetto.result);
 					}
 					if (operazione === "richiediListaFumetti"){
-				    	stampaFumettiPerAggiunta(oggetto.result, theXhr.responseText);
+				    	stampaFumettiPerAggiunta(callback, oggetto.result);
 					}
 
 
 					if (operazione === "visualizzaPrenotazioni"){
-				    	printPrenotazioniNegoziante(oggetto.result, theXhr.responseText);
+				    	printPrenotazioniNegoziante(callback, oggetto.result);
 					}
 
 
