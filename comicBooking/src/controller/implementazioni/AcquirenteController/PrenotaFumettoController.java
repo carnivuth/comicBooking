@@ -58,8 +58,9 @@ public class PrenotaFumettoController implements IPrenotaFumetto{
                     if(!p.isCompletata() && !expired){
                         count++;
                     }
+                    fumetterie.add(n.getFumetteria());
                 }
-                fumetterie.add(n.getFumetteria());
+                
            } 
            if(count>=copie.getDisponibilita()){
 
