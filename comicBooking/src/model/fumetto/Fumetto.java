@@ -82,7 +82,12 @@ public class Fumetto implements Recensibile{
             return false;
         }
         Fumetto fumetto = (Fumetto) o;
-        return Objects.equals(titolo, fumetto.titolo) && numero == fumetto.numero && Objects.equals(descrizione, fumetto.descrizione) && Objects.equals(casaEditrice, fumetto.casaEditrice);
+
+
+        return titolo.equals(fumetto.titolo) 
+        &&numero==fumetto.numero 
+        && descrizione.equals(fumetto.descrizione) 
+        && casaEditrice.equals(fumetto.casaEditrice);
     }
 
     @Override

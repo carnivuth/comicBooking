@@ -49,35 +49,48 @@ public class PrenotaFumettoController implements IPrenotaFumetto{
         for(Negoziante n:list){
             int count=0;
            for(NumeroCopie copie:n.getFumetteria().getCatalogo().getNumeroCopie()){
-               
+                System.out.println(f==null);
+                System.out.println(copie.getPrenotabile());
+                System.out.println(copie.getDisponibilita());
+                System.out.println(f.getTitolo());
+                System.out.println(copie.getFumetto().getTitolo());
+                System.out.println(f.getNumero());
+                System.out.println(copie.getFumetto().getNumero());
+                System.out.println(f.getDescrizione());
+                System.out.println(copie.getFumetto().getDescrizione());
+                System.out.println(f.getCasaEditrice());
+                System.out.println(copie.getFumetto().getCasaEditrice());
                 if(copie.getFumetto().equals(f) && copie.getPrenotabile() &&copie.getDisponibilita()>0  ){
+                    
+                    //controllo prenotazioni pending 
+                    count=0;
                     for(Prenotazione p:copie.getPrenotazioni()){
                     
-                    LocalDateTime tempo2=p.getDataPrenotazione().plusDays(copie.getTempoValidita());
-                    boolean expired=LocalDateTime.now().isAfter(tempo2);
-                    if(!p.isCompletata() && !expired){
-                        count++;
+                        LocalDateTime tempo2=p.getDataPrenotazione().plusDays(copie.getTempoValidita());
+                        boolean expired=LocalDateTime.now().isAfter(tempo2);
+                        
+                        if(!p.isCompletata() && !expired){
+                            count++;
+                        }
+                    
+                      
+                    
                     }
-                    fumetterie.add(n.getFumetteria());
-                }
-                
-           } 
-           if(count>=copie.getDisponibilita()){
+                    if(count>=copie.getDisponibilita()){
 
-               System.out.println("non prenotabile");
-
-           }else{
-               fumetterie.add(n.getFumetteria());
-           }
-        }
-        
-    }
+                        System.out.println("non prenotabile");
     
-   
-
-
+                    }else{
+                        fumetterie.add(n.getFumetteria());
+                    }
+                
+                } 
+                
+            }
+        
+        }
         return fumetterie;
-}
+    }
 
     @Override
     public List<Fumetto> getFumetti() {
