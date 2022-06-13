@@ -13,6 +13,8 @@ function printCatalogo(callback, result) {
     buttonFalse1 = "<button type=\"button\" value=\"";
     buttonFalse2 = "\" onclick=\"changePrenotabile(this.value)\">Non prenotabile</button>";
 
+    result = result.fumetti;
+
     for (var i = 0; i < result.length; i++) {
         f = result[i];
         disp = f.disponibilita;

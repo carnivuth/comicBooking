@@ -22,8 +22,7 @@ public class PrenotaFumettoController implements IPrenotaFumetto{
         prenotazione.setAcquirente(a);
         Catalogo catalogo = f.getCatalogo();
         List<NumeroCopie> listCopie = catalogo.getNumeroCopie();
-        List<Prenotazione> prenotazioni=a.getPrenotazioni();
-
+        
         for(NumeroCopie n:listCopie){
             if(n.getFumetto().equals(fu)){
                
@@ -32,14 +31,11 @@ public class PrenotaFumettoController implements IPrenotaFumetto{
                prenotazione.setCompletata(false);
 
                 //aggiunta del numeroCopia alla prenotazione
-               prenotazione.setCopia(n);
+               //prenotazione.setCopia(n);
 
                //aggiunta prenotazoine al numerocopia corrispondente
                n.getPrenotazioni().add(prenotazione);
                
-               //aggiunta prenotazione alle prenotazioni dell'acquirente
-               prenotazioni.add(prenotazione);
-            
                return true;
             }
         }

@@ -5,10 +5,11 @@ import controller.interfacce.iPercistance.IDataStoreFactory;
 
 public class MemoryDataStoreControllerFactory implements IDataStoreFactory {
 
+
     @Override
     public IDataStore createInstance() {
        
-        return new MemoryDataStoreController();
+        return MemoryDataStoreController.createInstance();
     }
     
 }

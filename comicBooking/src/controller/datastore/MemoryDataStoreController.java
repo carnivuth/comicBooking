@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import controller.interfacce.iPercistance.IDataStore;
+import controller.interfacce.iPercistance.IDataStoreFactory;
 import model.biblioteca.Biblioteca;
 import model.fumetteria.Catalogo;
 import model.fumetteria.Fumetteria;
@@ -20,7 +21,7 @@ public class MemoryDataStoreController implements IDataStore {
     private List<Negoziante> negozianti;
     private List<Fumetto> fumetti;
 
-    public MemoryDataStoreController(){
+    private MemoryDataStoreController(){
         acquirenti=new ArrayList<Acquirente>();
         negozianti=new ArrayList<Negoziante>();
         init();
@@ -198,5 +199,14 @@ public class MemoryDataStoreController implements IDataStore {
 
         
 
+    }
+
+    private static MemoryDataStoreController mdsc = null;
+
+    public static IDataStore createInstance() {
+        if (mdsc == null){
+            MemoryDataStoreController.mdsc = new MemoryDataStoreController();
+        }
+        return MemoryDataStoreController.mdsc;
     }
 }

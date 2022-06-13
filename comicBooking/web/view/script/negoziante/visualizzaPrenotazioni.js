@@ -6,12 +6,13 @@ function printPrenotazioniNegoziante(callback, result){
 
     callback.innerHTML += ("Fumetto" + tab + "Acquirente" + tab + "completato" + "<br>")
 
+    
     for (var i = 0; i < result.length; i++) {
         acquirente = result[i].acquirente.username;
-        fumetto = result[i].copia.fumetto;
+        fumetto = result[i].copia.fumetto.titolo;
         completata = result[i].completata;
 
-        callback.innerHTML += (fumetto + tab + acquirente + tab + completato + "<br>")
+        callback.innerHTML += (fumetto + tab + acquirente + tab + completata + "<br>")
 
     }
 

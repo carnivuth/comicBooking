@@ -23,6 +23,7 @@ import model.fumetteria.Fumetteria;
 import model.fumetto.Fumetto;
 import model.interessi.Interessi;
 import model.user.Acquirente;
+import model.user.Negoziante;
 
 
 public class GestioneAcquirenteController extends HttpServlet implements IGestioneAcquirente {
@@ -139,10 +140,29 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
             Fumetteria fumetteria= g.fromJson(gFumetteria, Fumetteria.class);
             Wrapper w2= new Wrapper();
 
-            w2.setResult(prenotaFinal.prenotaFumetto(fumetto, fumetteria, a));
-            w2.setOperazione("richiediPrenotazione");
-            resp.getWriter().println(g.toJson(w2));
-            
+            Fumetto fumetto2 = null;
+            Fumetteria fumetteria2 = null;
+            for (Fumetto fum : dataStore.getFumetti()){
+                if (fum.equals(fumetto)){
+                    fumetto2 = fum;
+                }
+            }
+            for (Negoziante neg : dataStore.getNegozianti()){
+                if (neg.getFumetteria().equals(fumetteria)){
+                    fumetteria2 = neg.getFumetteria();
+                }
+            }
+
+            if (fumetteria2 == null || fumetto2 == null){
+                w2.setResult(false);
+                w2.setOperazione("richiediPrenotazione");
+                resp.getWriter().println(g.toJson(w2));
+            }
+            else{
+                w2.setResult(prenotaFinal.prenotaFumetto(fumetto2, fumetteria2, a));
+                w2.setOperazione("richiediPrenotazione");
+                resp.getWriter().println(g.toJson(w2));
+            }
             break;  
 
 
