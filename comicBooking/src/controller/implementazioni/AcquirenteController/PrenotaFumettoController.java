@@ -18,21 +18,21 @@ public class PrenotaFumettoController implements IPrenotaFumetto{
     @Override
     public boolean prenotaFumetto(Fumetto fu, Fumetteria f, Acquirente a) {
         
-        Prenotazione p=new Prenotazione();
-        p.setAcquirente(a);
-        Catalogo cat = f.getCatalogo();
-        List<NumeroCopie> listCopie = cat.getNumeroCopie();
+        Prenotazione prenotazione=new Prenotazione();
+        prenotazione.setAcquirente(a);
+        Catalogo catalogo = f.getCatalogo();
+        List<NumeroCopie> listCopie = catalogo.getNumeroCopie();
         List<Prenotazione> prenotazioni=a.getPrenotazioni();
 
         for(NumeroCopie n:listCopie){
             if(n.getFumetto().equals(fu)){
-               p.setCopia(n);
-               p.setDataPrenotazione(LocalDateTime.now());
-               p.setCompletata(false);
+               prenotazione.setCopia(n);
+               prenotazione.setDataPrenotazione(LocalDateTime.now());
+               prenotazione.setCompletata(false);
                
                //aggiorni prenotazioni dell'utente
-               prenotazioni.add(p);
-               a.setPrenotazioni(prenotazioni);
+               prenotazioni.add(prenotazione);
+            
                return true;
             }
         }
