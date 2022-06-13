@@ -68,9 +68,9 @@ public class GestioneAcquirenteController extends HttpServlet implements IGestio
                             String username=(String) req.getSession().getAttribute("username"); 
 
                             Wrapper w= new Wrapper();
-                            System.out.println(username);
+                          
                             Interessi aaa = interessi.getInteressi(dataStore.getAcquirente(username));
-                            System.out.println(interessi.toString());
+                           
                             w.setResult(aaa);
 
                             w.setOperazione("interessi");
@@ -91,13 +91,7 @@ public class GestioneAcquirenteController extends HttpServlet implements IGestio
                         IPrenotaFumetto prenota2= new PrenotaFumettoController();
                         String gFumetto=(String) req.getAttribute("fumetto");
 
-                        Enumeration e=req.getAttributeNames();
-                        while (e.hasMoreElements())System.out.println("Value is: " + e.nextElement());
-                        e=req.getParameterNames();
-                        while (e.hasMoreElements())System.out.println("Value is: " + e.nextElement());
-                        
-                        System.out.println(gFumetto);
-                        Fumetto f= g.fromJson(gFumetto, Fumetto.class);
+                       Fumetto f= g.fromJson(gFumetto, Fumetto.class);
 
                         Wrapper w1= new Wrapper();
                         w1.setResult(prenota2.getFumetterie(f));
@@ -174,9 +168,9 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
                 String username=(String) req.getSession().getAttribute("username"); 
 
                 Wrapper w= new Wrapper();
-                System.out.println(username);
+               
                 Interessi aaa = interessi.getInteressi(dataStore.getAcquirente(username));
-                System.out.println(interessi.toString());
+                
                 w.setResult(aaa);
 
                 w.setOperazione("interessi");
@@ -197,13 +191,7 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
             IPrenotaFumetto prenota2= new PrenotaFumettoController();
             String gFumetto=(String) req.getParameter("fumetto");
 
-            Enumeration e=req.getAttributeNames();
-            while (e.hasMoreElements())System.out.println("Value is: " + e.nextElement());
-            e=req.getParameterNames();
-            while (e.hasMoreElements())System.out.println("Value is: " + e.nextElement());
-            
-            System.out.println(gFumetto);
-            Fumetto f= g.fromJson(gFumetto, Fumetto.class);
+           Fumetto f= g.fromJson(gFumetto, Fumetto.class);
 
             Wrapper w1= new Wrapper();
             w1.setResult(prenota2.getFumetterie(f));
