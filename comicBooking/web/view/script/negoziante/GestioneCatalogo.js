@@ -37,7 +37,7 @@ function printCatalogo(callback, result) {
 }
 
 function richiediCatalogo() {
-    request(uriServerNegoziante + "?operazione=catalogo", myGetElementById("catalogo"));
+    request(uriServerNegoziante + "?operazione=catalogo", myGetElementById("catalogo"), "get");
 }
 
 function changePrenotabile(elementNumber) {
@@ -45,7 +45,7 @@ function changePrenotabile(elementNumber) {
     fumettoDaCambiare = JSON.stringify(fum);
 
     ok = false;
-    giorni;
+    giorni = 0;
     while (!ok){
         pr = prompt("Inserisci la quantità");
         giorni = parseInt(quantita);
@@ -54,11 +54,20 @@ function changePrenotabile(elementNumber) {
         }
     }
 
-    request(uriServerNegoziante + "?operazione=changePrenotabile&fumettoDaCambiare=" + fumettoDaCambiare + "&giorni=" + giorni, myGetElementById("catalogo"));
+    paramsName = [];
+    paramsName[0] = "operazione";
+    paramsName[1] = "fumettoDaCambiare";
+    paramsName[2] = "giorni";
+    params = [];
+    params[0] = "changePrenotabile";
+    params[1] = fumettoDaCambiare;
+    params[2] = giorni;
+
+    request(uriServerNegoziante, myGetElementById("catalogo"), "post", paramsName, params);
 }
 
 function richiediListaFumetti(){
-    request(uriServerNegoziante + "?operazione=richiediListaFumetti", myGetElementById("fumettiAggiuntaCatalogo"))
+    request(uriServerNegoziante + "?operazione=richiediListaFumetti", myGetElementById("fumettiAggiuntaCatalogo"), "get")
 }
 
 function aggiungiFumetto(elementNumber) {
@@ -75,7 +84,16 @@ function aggiungiFumetto(elementNumber) {
         }
     }
 
-    request(uriServerNegoziante + "?operazione=aggiungiFumettoCatalogo&fumettoDaInserire=" + fumettoDaInserire + "&quantita=" + quantita, myGetElementById("catalogo"));
+    paramsName = [];
+    paramsName[0] = "operazione";
+    paramsName[1] = "fumettoDaInserire";
+    paramsName[2] = "quantita";
+    params = [];
+    params[0] = "aggiungiFumettoCatalogo";
+    params[1] = fumettoDaInserire;
+    params[2] = quantita;
+
+    request(uriServerNegoziante, myGetElementById("catalogo"), "post",  paramsName, params);
 }
 
 elencoFumetti;
@@ -100,9 +118,25 @@ function stampaFumettiPerAggiunta(callback, result) {
 function rimuoviFumettoCatalogo(elementNumber){
     fum = result[elementNumber];
     fumettoDaRimuovere = JSON.stringify(fum);
-    request(uriServer + "?operazione=rimuoviFumettoCatalogo&fumettoDaRimuovere=" + fumettoDaRimuovere, myGetElementById("catalogo"));
+
+    paramsName = [];
+    paramsName[0] = "operazione";
+    paramsName[1] = "fumettoDaRimuovere";
+    
+    params = [];
+    params[0] = "rimuoviFumettoCatalogo";
+    params[1] = fumettoDaRimuovere;
+
+    request(uriServer + "?operazione=rimuoviFumettoCatalogo&fumettoDaRimuovere=" + fumettoDaRimuovere, myGetElementById("catalogo"), "post",  paramsName, params);
 }
 
 function scatenaEvento(){
-    request(uriServerNegoziante + "?operazione=scatenaEvento&fumettoDaInserire=" + fumettoDaInserire + "&usernameNegoziante=" + getUsername(), myGetElementById("catalogo")); 
+    paramsName = [];
+    paramsName[0] = "operazione";
+    paramsName[1] = "fumettoNotifica";
+    
+    params = [];
+    params[0] = "scatenaEvento";
+    params[1] = fumettoDaInserire;
+    request(uriServerNegoziante, myGetElementById("catalogo"), "post", paramsName, params); 
 }

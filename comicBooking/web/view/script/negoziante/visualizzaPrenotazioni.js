@@ -1,5 +1,5 @@
 function richiediTuttePrenotazioniNegoziante(){
-    request(uriServerNegoziante + "?operazione=visualizzaPrenotazioni", myGetElementById("tuttePrenotazioni"));
+    request(uriServerNegoziante + "?operazione=visualizzaPrenotazioni", myGetElementById("tuttePrenotazioni"), "get");
 }
 
 function printPrenotazioniNegoziante(callback, result){

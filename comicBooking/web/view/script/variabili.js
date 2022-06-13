@@ -51,5 +51,5 @@ function gotoGestioneCatalogo() {
 }
 
 function gotoVisualizzaPrenotazioni(){
-    window.location.href = uriHtmlNegoziante + "visualizzaprenotazioni.html";
+    window.location.href = uriHtmlNegoziante + "visualizzaPrenotazioni.html";
 }

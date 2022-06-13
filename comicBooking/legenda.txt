@@ -21,7 +21,7 @@ result
 "?operazione=rimuoviFumettoCatalogo&fumettoDaRimuovere=" + fumettoDaRimuovere
 
 "?operazione=richiediListaFumetti" // per poterne selezionare uno nuovo da aggiungere
-"?operazione=scatenaEvento&fumettoDaInserire=" + fumettoDaInserire + "&usernameNegoziante=" + getUsername()
+"?operazione=scatenaEvento&fumettoNotifica=" + fumettoNotifica + "&usernameNegoziante=" + getUsername()
 
 "?operazione=visualizzaPrenotazioni"
 
