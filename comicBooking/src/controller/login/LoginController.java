@@ -53,8 +53,6 @@ public class LoginController extends HttpServlet implements ILogin{
                 req.getSession().setAttribute("username", u);
                 Cookie cookie = new Cookie("username", u);
                 resp.addCookie(cookie);
-                resp.addCookie(new Cookie("result1",Integer.toString(ruolo.compareTo("acquirente")) ));
-                resp.addCookie(new Cookie("result2",Integer.toString(ruolo.compareTo("negoziante")) ));
                 if (ruolo.equals("acquirente")){
                     resp.sendRedirect(req.getContextPath()+pathAcquirente);
                 }
