@@ -23,8 +23,15 @@ function printInteressi(callback, result){
         }*/
 
         text = "";
+        var j = 0;
         for (const x in f) {
-            text += f[x] + ", ";
+            if (j < 3){
+                text += f[x];
+            }
+            if (j < 2){
+                text += ",";
+            }
+            j += 1;
         }
  
         callback.innerHTML += text + "<br>";
