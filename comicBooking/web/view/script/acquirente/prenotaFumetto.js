@@ -64,7 +64,6 @@ function richiediPrenotazione(numeroFumetteria){
     params[0] = "richiediPrenotazione";
     params[1] = jsonFumetto;
     params[2] = jsonFumetteria;
-    alert(jsonFumetteria);
 
     request(uriServerAcquirente, myGetElementById("fumettiPerPrenotazione"), "post", paramsName, params);
 
