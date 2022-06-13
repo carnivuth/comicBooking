@@ -1,4 +1,4 @@
-result = "";
+result1 = "";
 
 function printCatalogo(callback, result) {
 
@@ -13,19 +13,19 @@ function printCatalogo(callback, result) {
     buttonFalse1 = "<button type=\"button\" value=\"";
     buttonFalse2 = "\" onclick=\"changePrenotabile(this.value)\">Non prenotabile</button>";
 
-    result = result.fumetti;
+    result1 = result.fumetti;
 
-    for (var i = 0; i < result.length; i++) {
-        f = result[i];
+    for (var i = 0; i < result1.length; i++) {
+        f = result1[i];
         disp = f.disponibilita;
         pren = f.prenotanile;
-        fumetto = f.fumetto
+        fumetto = f.fumetto;
 
         butt = "";
-        if (pren == true) {
-            butt = buttonTrue1 + i + buttonTrue2;
-        } else {
+        if (pren == false) {
             butt = buttonFalse1 + i + buttonFalse2;
+        } else {
+            butt = buttonTrue1 + i + buttonTrue2;
         }
 
 
@@ -41,15 +41,15 @@ function richiediCatalogo() {
 }
 
 function changePrenotabile(elementNumber) {
-    fum = result[elementNumber];
+    fum = result1[elementNumber];
     fumettoDaCambiare = JSON.stringify(fum);
 
     ok = false;
     giorni = 0;
     while (!ok){
-        pr = prompt("Inserisci la quantità");
-        giorni = parseInt(quantita);
-        if (quantita > 0){
+        pr = prompt("Inserisci il tempo di validità della prenotaione");
+        giorni = parseInt(pr);
+        if (giorni > 0){
             ok = true;
         }
     }
@@ -71,14 +71,14 @@ function richiediListaFumetti(){
 }
 
 function aggiungiFumetto(elementNumber) {
-    fum = result[elementNumber];
+    fum = elencoFumetti[elementNumber];
     fumettoDaInserire = JSON.stringify(fum);
 
     ok = false;
-    quantita;
+    quantita = 0;
     while (!ok){
         pr = prompt("Inserisci la quantità");
-        quantita = parseInt(quantita);
+        quantita = parseInt(pr);
         if (quantita > 0){
             ok = true;
         }
@@ -96,15 +96,15 @@ function aggiungiFumetto(elementNumber) {
     request(uriServerNegoziante, myGetElementById("catalogo"), "post",  paramsName, params);
 }
 
-elencoFumetti;
-fumettoDaInserire;
+elencoFumetti = "";
+fumettoDaInserire = "";
 
 function stampaFumettiPerAggiunta(callback, result) {
 
     fumetti = result;
     elencoFumetti = fumetti;
 
-    callback.innerHTML += ("Titolo" + tab + "Numero" + "tab" + Conferma + "<br>")
+    callback.innerHTML += ("Titolo" + tab + "Numero" + "tab" + "Conferma" + "<br>")
 
     for (var i = 0; i < result.length; i++) {
         f = result[i];

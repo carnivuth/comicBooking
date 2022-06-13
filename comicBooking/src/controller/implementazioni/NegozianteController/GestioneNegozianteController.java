@@ -17,6 +17,7 @@ import controller.interfacce.iNegoziante.IPrenotazione;
 import controller.interfacce.iPercistance.IDataStore;
 import controller.interfacce.iPercistance.IDataStoreFactory;
 import model.Wrapper;
+import model.fumetteria.Catalogo;
 import model.fumetto.Fumetto;
 
 public class GestioneNegozianteController extends HttpServlet implements IGestioneNegoziante {
@@ -43,7 +44,10 @@ public class GestioneNegozianteController extends HttpServlet implements IGestio
                 c.getCatalogo (dataStore.getNegoziante(username));
                 //send
                 Wrapper w= new Wrapper();
-                w.setResult(c.getCatalogo (dataStore.getNegoziante(username)));
+                Catalogo cat = c.getCatalogo (dataStore.getNegoziante(username));
+                Catalogo cat2 = new Catalogo();
+                cat2.setNumeroCopie(cat.getNumeroCopie()); 
+                w.setResult(cat2);
                 w.setOperazione("catalogo");
                            
                 resp.getWriter().println(g.toJson(w));
@@ -53,7 +57,7 @@ public class GestioneNegozianteController extends HttpServlet implements IGestio
 
                 Wrapper w4= new Wrapper();
                 w4.setResult(dataStore.getFumetti());
-                w4.setOperazione("rimuoviFumettoCatalogo");
+                w4.setOperazione("richiediListaFumetti");
 
                 resp.getWriter().println(g.toJson(w4));
                 break;  
@@ -95,7 +99,9 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
             String neg=(String) req.getSession().getAttribute("username"); 
             String gFumetto=(String) req.getAttribute("fumettoDaCambiare"); 
             Fumetto f= g.fromJson(gFumetto, Fumetto.class);
-            int giorni=(int) req.getSession().getAttribute("giorni"); 
+            //int giorni=(Integer) req.getAttribute("giorni"); 
+            String gg = req.getParameter("giorni");
+            int giorni = Integer.parseInt(gg);
             c1.rendiVolumePrenotabile(f, giorni, dataStore.getNegoziante(neg));
             //send
             Wrapper w1= new Wrapper();
@@ -110,7 +116,9 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
             String negoz=(String) req.getSession().getAttribute("username"); 
             String gFum=(String) req.getAttribute("fumettoDaInserire"); 
             Fumetto fum= g.fromJson(gFum, Fumetto.class);
-            int quantita=(int) req.getAttribute("quantita"); 
+            //int quantita=(int) req.getAttribute("quantita"); 
+            String qua = req.getParameter("quantita");
+            int quantita = Integer.parseInt(qua);
             c2.aggiungiFumetto(fum, quantita, dataStore.getNegoziante(negoz));
 
             Wrapper w2= new Wrapper();
