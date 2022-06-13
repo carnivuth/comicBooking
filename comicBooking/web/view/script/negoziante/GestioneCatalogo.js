@@ -2,8 +2,6 @@ result = "";
 
 function printCatalogo(callback, result) {
 
-    result = result.fumetti;
-
     buttonPerRimuovere1 = "<button type=\"button\" value=\"";
     buttonPerRimuovere2 = "\" onclick=\"rimuoviFumettoCatalogo(this.value)\">X</button>";
 
