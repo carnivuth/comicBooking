@@ -18,21 +18,21 @@ public class PrenotaFumettoController implements IPrenotaFumetto{
     @Override
     public boolean prenotaFumetto(Fumetto fu, Fumetteria f, Acquirente a) {
         
-        Prenotazione p=new Prenotazione();
-        p.setAcquirente(a);
-        Catalogo cat = f.getCatalogo();
-        List<NumeroCopie> listCopie = cat.getNumeroCopie();
+        Prenotazione prenotazione=new Prenotazione();
+        prenotazione.setAcquirente(a);
+        Catalogo catalogo = f.getCatalogo();
+        List<NumeroCopie> listCopie = catalogo.getNumeroCopie();
         List<Prenotazione> prenotazioni=a.getPrenotazioni();
 
         for(NumeroCopie n:listCopie){
             if(n.getFumetto().equals(fu)){
-               p.setCopia(n);
-               p.setDataPrenotazione(LocalDateTime.now());
-               p.setCompletata(false);
+               prenotazione.setCopia(n);
+               prenotazione.setDataPrenotazione(LocalDateTime.now());
+               prenotazione.setCompletata(false);
                
                //aggiorni prenotazioni dell'utente
-               prenotazioni.add(p);
-               a.setPrenotazioni(prenotazioni);
+               prenotazioni.add(prenotazione);
+            
                return true;
             }
         }
@@ -49,17 +49,7 @@ public class PrenotaFumettoController implements IPrenotaFumetto{
         for(Negoziante n:list){
             int count=0;
            for(NumeroCopie copie:n.getFumetteria().getCatalogo().getNumeroCopie()){
-                System.out.println(f==null);
-                System.out.println(copie.getPrenotabile());
-                System.out.println(copie.getDisponibilita());
-                System.out.println(f.getTitolo());
-                System.out.println(copie.getFumetto().getTitolo());
-                System.out.println(f.getNumero());
-                System.out.println(copie.getFumetto().getNumero());
-                System.out.println(f.getDescrizione());
-                System.out.println(copie.getFumetto().getDescrizione());
-                System.out.println(f.getCasaEditrice());
-                System.out.println(copie.getFumetto().getCasaEditrice());
+               
                 if(copie.getFumetto().equals(f) && copie.getPrenotabile() &&copie.getDisponibilita()>0  ){
                     
                     //controllo prenotazioni pending 
