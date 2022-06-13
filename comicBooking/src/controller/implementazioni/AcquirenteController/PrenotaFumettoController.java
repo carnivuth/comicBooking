@@ -29,6 +29,7 @@ public class PrenotaFumettoController implements IPrenotaFumetto{
                prenotazione.setCopia(n);
                prenotazione.setDataPrenotazione(LocalDateTime.now());
                prenotazione.setCompletata(false);
+               n.getPrenotazioni().add(prenotazione);
                
                //aggiorni prenotazioni dell'utente
                prenotazioni.add(prenotazione);
