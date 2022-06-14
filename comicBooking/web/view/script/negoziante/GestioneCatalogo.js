@@ -2,6 +2,8 @@ result1 = "";
 
 function printCatalogo(callback, result) {
 
+    //alert("stampaCatalogo");
+
     buttonPerRimuovere1 = "<button type=\"button\" value=\"";
     buttonPerRimuovere2 = "\" onclick=\"rimuoviFumettoCatalogo(this.value)\">X</button>";
 
@@ -13,7 +15,7 @@ function printCatalogo(callback, result) {
     buttonFalse1 = "<button type=\"button\" value=\"";
     buttonFalse2 = "\" onclick=\"changePrenotabile(this.value)\">Non prenotabile</button>";
 
-    result1 = result.fumetti;
+    result1 = result;//.fumetti;
 
     for (var i = 0; i < result1.length; i++) {
         f = result1[i];
@@ -104,7 +106,7 @@ function stampaFumettiPerAggiunta(callback, result) {
     fumetti = result;
     elencoFumetti = fumetti;
 
-    callback.innerHTML += ("Titolo" + tab + "Numero" + "tab" + "Conferma" + "<br>")
+    callback.innerHTML = ("Titolo" + tab + "Numero" + "tab" + "Conferma" + "<br>")
 
     for (var i = 0; i < result.length; i++) {
         f = result[i];
@@ -116,7 +118,7 @@ function stampaFumettiPerAggiunta(callback, result) {
 }
 
 function rimuoviFumettoCatalogo(elementNumber){
-    fum = result[elementNumber];
+    fum = result1[elementNumber];
     fumettoDaRimuovere = JSON.stringify(fum);
 
     paramsName = [];

@@ -3,7 +3,7 @@ function printInteressi(callback, result){
     zzzzzz = result.interessi;
     callback.innerHTML = "Tipologia" + tab + "Nome" + "<br>";
     //callback.innerHTML += zzzzzz;
-    alert(zzzzzz.length);
+    
 
     for (var i=0; i<zzzzzz.length; i++) {
         f = zzzzzz[i];
