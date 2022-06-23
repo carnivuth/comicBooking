@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import controller.interfacce.iPercistance.IDataStore;
-import controller.interfacce.iPercistance.IDataStoreFactory;
 import model.biblioteca.Biblioteca;
 import model.fumetteria.Catalogo;
 import model.fumetteria.Fumetteria;
@@ -98,44 +97,44 @@ public class MemoryDataStoreController implements IDataStore {
         List<Fumetto> fumetti=new ArrayList<Fumetto>();
         
         Serie s=new Serie();
-        s.setAutore("provaAutore");
-        s.setTitolo("provaTitolo");
+        s.setAutore("Hideo Yamamoto");
+        s.setTitolo("Homunculus. L'occhio dell'anima.");
         
         Fumetto f =new Fumetto();
         f.setSerie(s);
-        f.setTitolo("titolo1");
+        f.setTitolo("Homunculus 1");
         f.setNumero(1);
-        f.setDescrizione("descrizione 1");
-        f.setCasaEditrice("provacasaEditrice");
+        f.setDescrizione("Un racconto originalissimo e intrigante firmato Hideo Yamamoto: un viaggio a tinte fosche nell'animo umano, e magnifico esempio di letteratura matura e spregiudicata.");
+        f.setCasaEditrice("Planet Manga");
         fumettiA.add(f);
         fumetti.add(f);
 
         //creazione fumetti acquirente
          f =new Fumetto();
-         f.setTitolo("titolo2");
+         f.setTitolo("Homunculus 2");
         f.setSerie(s);
         f.setNumero(2);
-        f.setDescrizione("descrizione 2");
-        f.setCasaEditrice("provacasaEditrice");
+        f.setDescrizione("Un racconto originalissimo e intrigante firmato Hideo Yamamoto: un viaggio a tinte fosche nell'animo umano, e magnifico esempio di letteratura matura e spregiudicata.");
+        f.setCasaEditrice("Planet Manga");
         fumettiA.add(f);
         fumetti.add(f);
 
         
          f =new Fumetto();
         f.setSerie(s);
-        f.setTitolo("titolo3");
+        f.setTitolo("Homunculus 3");
         f.setNumero(3);
-        f.setDescrizione("descrizione 3");
-        f.setCasaEditrice("provacasaEditrice");
+        f.setDescrizione("Un racconto originalissimo e intrigante firmato Hideo Yamamoto: un viaggio a tinte fosche nell'animo umano, e magnifico esempio di letteratura matura e spregiudicata.");
+        f.setCasaEditrice("Planet Manga");
         fumettiA.add(f);
         fumetti.add(f);
 
         f =new Fumetto();
-        f.setTitolo("titolo4");
+        f.setTitolo("Homunculus 4");
         f.setSerie(s);
         f.setNumero(4);
-        f.setDescrizione("descrizione 4");
-        f.setCasaEditrice("provacasaEditrice");
+        f.setDescrizione("Un racconto originalissimo e intrigante firmato Hideo Yamamoto: un viaggio a tinte fosche nell'animo umano, e magnifico esempio di letteratura matura e spregiudicata.");
+        f.setCasaEditrice("Planet Manga");
         fumettiA.add(f);
         fumetti.add(f);
        
@@ -149,9 +148,9 @@ public class MemoryDataStoreController implements IDataStore {
         Negoziante n1=new Negoziante();
         n1.setUsername("pluto");
         Fumetteria f1=new Fumetteria();
-        f1.setCitta("bologna");
-        f1.setIndirizzo("indirizzo");
-        f1.setNome("nome");
+        f1.setCitta("Bologna");
+        f1.setIndirizzo("Via Saragozza 34/B");
+        f1.setNome("Pop Store");
         Interessi inter = new Interessi();
         inter.aggiungiInteresse(f1);
         u1.setInteressi(inter);
@@ -163,28 +162,28 @@ public class MemoryDataStoreController implements IDataStore {
         f =new Fumetto();
         f.setSerie(s);
         f.setNumero(5);
-        f.setTitolo("titolo5");
-        f.setDescrizione("descrizione 5");
-        f.setCasaEditrice("provacasaEditrice");
+        f.setTitolo("Homunculus 5");
+        f.setDescrizione("Un racconto originalissimo e intrigante firmato Hideo Yamamoto: un viaggio a tinte fosche nell'animo umano, e magnifico esempio di letteratura matura e spregiudicata.");
+        f.setCasaEditrice("Planet Manga");
         fumettiN.add(f);
         fumetti.add(f);
 
         
          f =new Fumetto();
         f.setSerie(s);
-        f.setTitolo("titolo6");
+        f.setTitolo("Homunculus 6");
         f.setNumero(6);
-        f.setDescrizione("descrizione 6");
-        f.setCasaEditrice("provacasaEditrice");
+        f.setDescrizione("Un racconto originalissimo e intrigante firmato Hideo Yamamoto: un viaggio a tinte fosche nell'animo umano, e magnifico esempio di letteratura matura e spregiudicata.");
+        f.setCasaEditrice("Planet Manga");
         fumettiN.add(f);
         fumetti.add(f);
 
         f =new Fumetto();
         f.setSerie(s);
         f.setNumero(7);
-        f.setTitolo("titolo7");
-        f.setDescrizione("descrizione 7");
-        f.setCasaEditrice("provacasaEditrice");
+        f.setTitolo("Homunculus 7");
+        f.setDescrizione("Un racconto originalissimo e intrigante firmato Hideo Yamamoto: un viaggio a tinte fosche nell'animo umano, e magnifico esempio di letteratura matura e spregiudicata.");
+        f.setCasaEditrice("Planet Manga");
         fumettiN.add(f);
         fumetti.add(f);
   
