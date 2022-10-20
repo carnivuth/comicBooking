@@ -1,0 +1,5 @@
+###build files
+**/*.class
+
+###environment setting for ant deploy
+ant/environment.properties
