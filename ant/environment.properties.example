@@ -2,8 +2,8 @@
 # building and running the application
 
 # JRE
-jdk.home=C:\\Program Files\\Java\\jdk-13.0.2
+jdk.home=//your jdk home
 
 # WebServer
-server.home="full server path"
+server.home=//full server path
 deploy.path="webapp home directory"/webapps
