@@ -3,3 +3,8 @@
 
 ###environment setting for ant deploy
 ant/environment.properties
+
+
+###ide folder
+.vscode
+.idea
