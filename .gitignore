@@ -8,3 +8,4 @@ ant/environment.properties
 ###ide folder
 .vscode
 .idea
+build
